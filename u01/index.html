@@ -1,0 +1,775 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../documents/">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>Introducció a la Intel·ligència Artificial - Mòdul: Sistemes d'Aprenentatge Automàtic (CE IA i Big Data) Curs 25/26</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.e53b48f4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../styles/taules.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#introduccio-a-la-intelligencia-artificial" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Mòdul: Sistemes d&#39;Aprenentatge Automàtic (CE IA i Big Data) Curs 25/26" class="md-header__button md-logo" aria-label="Mòdul: Sistemes d'Aprenentatge Automàtic (CE IA i Big Data) Curs 25/26" data-md-component="logo">
+      
+  <img src="../img/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Mòdul: Sistemes d'Aprenentatge Automàtic (CE IA i Big Data) Curs 25/26
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Introducció a la Intel·ligència Artificial
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Mòdul: Sistemes d&#39;Aprenentatge Automàtic (CE IA i Big Data) Curs 25/26" class="md-nav__button md-logo" aria-label="Mòdul: Sistemes d'Aprenentatge Automàtic (CE IA i Big Data) Curs 25/26" data-md-component="logo">
+      
+  <img src="../img/logo.svg" alt="logo">
+
+    </a>
+    Mòdul: Sistemes d'Aprenentatge Automàtic (CE IA i Big Data) Curs 25/26
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Inici
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../documents/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Presentació
+    
+      <br>
+      <small>Mòdul Sistemes d'Aprenentatge Automàtic</small>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    1. Introducció a la Intel·ligència Artificial
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    1. Introducció a la Intel·ligència Artificial
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#definicio-i-conceptes-basics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Definició i conceptes bàsics
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#historia-i-evolucio-de-la-ia" class="md-nav__link">
+    <span class="md-ellipsis">
+      Història i evolució de la IA
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tipus-dintelligencia-artificial" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tipus d'intel·ligència artificial
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tipus d&#39;intel·ligència artificial">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ia-feble" class="md-nav__link">
+    <span class="md-ellipsis">
+      IA feble
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ia-forta" class="md-nav__link">
+    <span class="md-ellipsis">
+      IA forta
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#debats" class="md-nav__link">
+    <span class="md-ellipsis">
+      Debats:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ia-simbolica-convencional-vs-ia-basada-en-dades-computacional" class="md-nav__link">
+    <span class="md-ellipsis">
+      IA simbòlica (convencional) vs IA basada en dades (computacional)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ia-generativa" class="md-nav__link">
+    <span class="md-ellipsis">
+      IA Generativa
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#camps-daplicacio-de-la-ia" class="md-nav__link">
+    <span class="md-ellipsis">
+      Camps d'aplicació de la IA
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#agents-intelligents" class="md-nav__link">
+    <span class="md-ellipsis">
+      Agents intel·ligents
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Agents intel·ligents">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#protocols-acp-i-mcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Protocols ACP i MCP
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implicacions-etiques-i-socials" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implicacions ètiques i socials
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#definicio-i-conceptes-basics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Definició i conceptes bàsics
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#historia-i-evolucio-de-la-ia" class="md-nav__link">
+    <span class="md-ellipsis">
+      Història i evolució de la IA
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tipus-dintelligencia-artificial" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tipus d'intel·ligència artificial
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tipus d&#39;intel·ligència artificial">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ia-feble" class="md-nav__link">
+    <span class="md-ellipsis">
+      IA feble
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ia-forta" class="md-nav__link">
+    <span class="md-ellipsis">
+      IA forta
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#debats" class="md-nav__link">
+    <span class="md-ellipsis">
+      Debats:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ia-simbolica-convencional-vs-ia-basada-en-dades-computacional" class="md-nav__link">
+    <span class="md-ellipsis">
+      IA simbòlica (convencional) vs IA basada en dades (computacional)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ia-generativa" class="md-nav__link">
+    <span class="md-ellipsis">
+      IA Generativa
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#camps-daplicacio-de-la-ia" class="md-nav__link">
+    <span class="md-ellipsis">
+      Camps d'aplicació de la IA
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#agents-intelligents" class="md-nav__link">
+    <span class="md-ellipsis">
+      Agents intel·ligents
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Agents intel·ligents">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#protocols-acp-i-mcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Protocols ACP i MCP
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implicacions-etiques-i-socials" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implicacions ètiques i socials
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="introduccio-a-la-intelligencia-artificial">Introducció a la intel·ligència Artificial</h1>
+<p>En esta primera unitat anem a introduir conceptes bàsics sobre intel·ligència artificial i models d'IA. La introducció serà comuna als mòduls de <strong>Models d'Intel·ligència Artificial</strong> i <strong>Sistemes d'Aprenentatge Automàtic</strong>, per la qual cosa molts conceptes es repetiran en ambdós mòduls.</p>
+<h2 id="definicio-i-conceptes-basics">Definició i conceptes bàsics</h2>
+<p>Una primera definició d'<strong>intel·ligència artificial (IA)</strong> podria ser la següent: <strong><em>habilitat per aprendre i resoldre problemes duta a terme per una màquina o programari</em></strong>.</p>
+<p>Si entenem com IA la capacitat d'una màquina per a simular processos d'intel·ligència humana, podem establir almenys tres punts clau:</p>
+<ul>
+<li><strong>Aprenentatge</strong>: La IA ha de ser capaç d'aprendre de l'experiència, tant inicialment a partir d'unes regles / dades inicials, com millorant el seu rendiment a mesura que s'exposa a més dades o situacions (<strong>autocorrecció</strong>).</li>
+<li><strong>Raonament</strong>: La IA ha de ser capaç de raonar i prendre decisions basades en la informació disponible, utilitzant lògica i coneixements previs.</li>
+<li><strong>Resolució de problemes</strong>: La IA ha de ser capaç de resoldre problemes complexos i adaptar-se a noves situacions, utilitzant estratègies i tècniques adequades.</li>
+</ul>
+<p>Una <strong>màquina intel·ligent</strong>, és a dir, capaç de realitzar les tasques dites anteriorment, seria un agent flexible que percep el seu entorn i porta a terme accions que maximitzen les seues possibilitats d'èxit en objectius i tasques concretes.</p>
+<p>El concepte d'intel·ligència artificial (IA) no és el mateix ara que fa, per exemple, 50 anys. En unes dècades hem passat d'unes màquines que eren capaces de realitzar càlculs senzills a sistemes que poden aprendre, raonar i prendre decisions complexes. Els objectius també han anat canviat al llarg del temps. En un principi eren molt ambiciosos, però no existia la tecnologia necessària. Poc a poc els objectius s'han anat fent més realistes i adaptant-se a la tecnologia existent en cada moment. </p>
+<p>Així, des dels anys 60 hem passat d'un objectiu inicial que pretenia replicar el procés de la intel·ligència humana, a uns altres més pragmàtics i concrets. Els avanços que s'han produït tant en el camp de la IA com en el hardware i software necessaris, han fet que tornem a mirar endavant amb més ambició. La idea de crear màquines que puguen pensar i actuar com humans ha evolucionat cap a la creació de sistemes que poden aprendre i adaptar-se a noves situacions, processar grans volums de dades i resoldre problemes complexos de manera autònoma, però sense perdre de vista la possibilitat d'arribar a que la IA puga raonar, aprendre i actuar con un ésser humà; fins i tot, que puga superar les capacitats humanes en certes tasques.</p>
+<p>És per això que tenim, com veurem més endavant, diferents enfocaments i tipus d'intel·ligència artificial, que van des de la <strong>IA feble</strong>, que es centra en tasques específiques i limitades, fins a la <strong>IA forta</strong>, que pretén replicar la intel·ligència humana en tota la seua complexitat.</p>
+<blockquote>
+<p>Fins i tot una eina com chatGPT, que sembla que sap fer de tot, és realment una IA feble centrada bàsicament en una única tasca: processament del llenguatge. Tornarem més endavant sobre este concepte.</p>
+</blockquote>
+<h2 id="historia-i-evolucio-de-la-ia">Història i evolució de la IA</h2>
+<p><img alt="Línia temporal IA" src="img/grafic_linia_temps_IA.png" /></p>
+<p>Encara que semble que la intel·ligència artificial és un concepte recent, les seues arrels es remunten a fa més de 70 anys. En esta unitat farem un repàs breu de la història i l'evolució de la IA, des dels seus inicis fins als avanços més recents.</p>
+<ul>
+<li>1943: Warren McCulloch i Walter Pitts publiquen <a href="https://lamaquinaoraculo.com/deep-learning/el-modelo-neuronal-de-mcculloch-y-pitts/">un article</a> que proposa un model matemàtic per a les neurones, establint les bases de les xarxes neuronals. </li>
+<li>1950: Alan Turing proposa el Test de Turing, un criteri per a determinar si una màquina pot exhibir un comportament intel·ligent indistinguible del d'un ésser humà.</li>
+<li>1956: En la Conferència de Dartmouth, John McCarthy, Marvin Minsky i altres investigadors defineixen el terme "intel·ligència artificial" i estableixen les bases per a la investigació en este camp.</li>
+<li>1958: Se desenvolupa el llenguatge de programació LISP, que es converteix en un dels llenguatges més utilitzats en la investigació d'IA. També apareix el perceptrón, un algorisme de xarxa neuronal proposat per Frank Rosenblatt per a reconeixement de patrons. Concretament, s'utilitzava per a reconèixer formes simples i classificar imatges.</li>
+<li>1959: Desenvolupament dels primers sistemes d'IA que utilitzaven regles per a resoldre problemes matemàtics i demostrar certs teoremes.</li>
+<li>1960s: Se desenvolupen els primers sistemes d'IA especialitzats, com ELIZA, un programa de processament del llenguatge natural que simulava una conversa amb un terapeuta, ordinadors que juguen als escacs, sistemes que resolen problemes matemàtics... Sempre tasques molt específiques i limitades.</li>
+<li>1966-1970: els resultats estan per baix de les expectatives i es produeix un primer període de desencantament amb la IA, conegut com "l'hivern de la IA". Els investigadors es donen compte que les expectatives inicials eren massa altes i que els avanços són més lents del que s'esperava. Se reajusten els objectius.</li>
+<li>1970s: S'investiga en sistemes basats en el coneixement, com els sistemes experts, que utilitzaven regles i coneixements específics per a resoldre problemes en àrees com la medicina o l'enginyeria. </li>
+<li>1980s: S'inicia un segon període d'interès per la IA, impulsat per l'augment de la potència de càlcul i el desenvolupament de noves tècniques d'aprenentatge automàtic. Se torna a investigar en xarxes neuronals hi ha avanços, però els models són molt complexos i necessiten supervisió constant i ajustos manuals. Segon hivern de la IA.</li>
+<li>1990s i 2000s: IA moderna, basada en probabilitat i estadística, que permet arribar a conclusions futures a partir de dades passades. Models basats en dades, més flexibles que els models simbòlics.</li>
+<li>1997: Hui sembla una anècdota, però l'ordinador Deep Blue d'IBM guanya al campió mundial d'escacs Garry Kasparov, marcant un moment històric en la IA.</li>
+<li>2010s: la gran quantitat de dades i les tècniques de tractament (Big Data), així com la computació al núvol (menys necessitat de recursos locals), permeten l'ús de models d'aprenentatge profund (Deep Learning) i xarxes neuronals convolucionals, que han revolucionat la IA en àrees com la visió per computador i el processament del llenguatge natural.</li>
+<li>Algunes fites dels darrers anys:</li>
+<li>2011: IBM Watson guanya el concurs de preguntes i respostes Jeopardy!, demostrant la capacitat de processar i entendre el llenguatge natural.</li>
+<li>2012: AlexNet guanya la competició ImageNet, demostrant l'eficàcia de les xarxes neuronals profundes en el reconeixement d'imatges.</li>
+<li>el vídeo dels 500 milions de dòlars de DeepMind: Deep-Q aprenent a jugar el joc Atari Breakout. <a href="https://www.youtube.com/watch?v=V1eYniJ0Rnk">enllaç per veure el video</a></li>
+<li>2015: Google allibera el seu sistema d'IA, <strong>TensorFlow</strong>, que es converteix en un dels marcs més utilitzats per a l'aprenentatge automàtic i les xarxes neuronals.</li>
+<li>2016: AlphaGo, desenvolupat per DeepMind, guanya al campió mundial de Go, un joc extremadament complex.</li>
+<li>2020: GPT-3, un model de llenguatge natural desenvolupat per OpenAI, demostra una capacitat sorprenent per a generar text coherent i realista que ha anat millorant molt des d'aleshores. Utilitza 175 mil milions de paràmetres i és capaç de realitzar una àmplia gamma de tasques de processament del llenguatge natural, com traducció, resum, generació de text i resposta a preguntes. OpenAI no ha donat informació de quants paràmetres té el model GPT-4, tot i que certes fonts parlen de 250 mil millions.</li>
+<li>Capacitat de generar imatges, vídeos i àudio de manera realista, com DALL-E, Stable Diffusion, Midjourney... <a href="https://thispersondoesnotexist.com/">Imatges de rostres humans inexistents</a>.</li>
+<li><strong><em>Deep Learning</em>*: una branca de l'aprenentatge automàtic del que analitzarem més detalladament en el mòdul de </strong>Sistemes d'Aprenentatge Automàtic**, on estudiarem també els diferents tipus d'aprenentatge automàtic (supervisat, no supervisat, per reforç).</li>
+</ul>
+<h2 id="tipus-dintelligencia-artificial">Tipus d'intel·ligència artificial</h2>
+<p>La intel·ligència artificial es pot classificar en diferents tipus segons el seu enfocament i les seues capacitats. En este apartat, veurem els principals tipus d'IA, des de la IA feble fins a la IA forta, i les seues característiques distintives.</p>
+<h3 id="ia-feble">IA feble</h3>
+<p>La <strong>IA feble</strong>, també coneguda com a <strong>IA estreta (narrow AI)</strong>, es refereix a sistemes d'intel·ligència artificial dissenyats per a realitzar tasques específiques i limitades. Estos sistemes no tenen consciència ni comprensió general del món, sinó que estan enfocats en resoldre problemes concrets. Són reactius, la qual cosa vol dir que no tenen iniciativa sino que reaccionen a certes ordres o accions. No "aprenen" com un ésser humà: "entrenen" amb dades o per amb moltes proves/errors.</p>
+<p>Alguns exemples d'IA feble inclouen:</p>
+<ul>
+<li>Assistents virtuals com Siri o Alexa, que poden respondre preguntes i realitzar tasques senzilles.</li>
+<li>Algoritmes de recomanació en plataformes com Netflix o Amazon, que suggereixen contingut basat en les preferències de l'usuari.</li>
+<li>Sistemes de reconeixement de veu i imatge, que poden identificar patrons en dades específiques.   </li>
+</ul>
+<p>Com podeu veure, la IA feble és la que s'ha estat desenvolupant i utilitzant en els darrers anys, i és la que trobem en la majoria de les aplicacions d'IA actuals. La seua limitació és que no pot generalitzar coneixements ni aprendre de manera autònoma fora del seu àmbit específic. Per tal de poder superar els "hiverns de la IA", se va apostar per este enfocament més pragmàtic i realista.</p>
+<h3 id="ia-forta">IA forta</h3>
+<p>La <strong>IA forta</strong>, també coneguda com a <strong>IA general (general AI)</strong>, es refereix a sistemes d'intel·ligència artificial que tenen la capacitat de comprendre, aprendre i aplicar coneixements en una àmplia gamma de tasques, similar a la intel·ligència humana. Estos sistemes podrien raonar, planificar, resoldre problemes i adaptar-se a noves situacions sense necessitat d'intervenció humana constant. En teoria serien proactives, és a dir, no necessitarian una ordre o un ésser humà demanant-li una tasca. També en teoria (de moment), serien capaces de raonar com un ésser humà.</p>
+<p>La IA forta encara és un objectiu a llarg termini en la investigació d'IA, i no s'ha aconseguit completament. No obstant això, els avanços en àrees com l'aprenentatge automàtic, les xarxes neuronals i el processament del llenguatge natural estan apropant-nos cada vegada més a este objectiu.</p>
+<p><img alt="IA feble vs IA forta" src="img/grafic_IA_feble_vs_forta.png" /></p>
+<h3 id="debats">Debats:</h3>
+<ul>
+<li>IA feble vs IA forta</li>
+<li>chatGPT, DeepSeek, NotebookLM, Gemini... Són IAs febles o fortes?</li>
+</ul>
+<h3 id="ia-simbolica-convencional-vs-ia-basada-en-dades-computacional">IA simbòlica (convencional) vs IA basada en dades (computacional)</h3>
+<p>La <strong>IA simbòlica (o convencional)</strong> es basa en la representació del coneixement mitjançant símbols i regles lògiques. Este enfocament utilitza sistemes basats en regles, lògica i raonament per a resoldre problemes i prendre decisions. La IA simbòlica ha estat utilitzada en sistemes experts i en la resolució de problemes matemàtics. És poc flexible i complicada d'escalar. En els anys 80 utilitzàvem llenguatges com <strong>Prolog</strong> o <strong>Lisp</strong> per a programar este tipus d'IA. La IA simbòlica (de vegades anomenada <strong><em>IA clàssica</em></strong>), per tant, requereix un coneixement previ i explícit per a funcionar, i es basa en la lògica i les regles per a processar la informació.</p>
+<p>Exemples d'<strong>IA simbòlica</strong> inclouen:</p>
+<ul>
+<li>Sistemes experts que utilitzen regles per a resoldre problemes en àrees específiques, com la medicina o l'enginyeria.</li>
+<li>Xarxes bayesianes (grafos) que utilitzen probabilitats per a inferir conclusions a partir de dades (plou --&gt; la terra està mullada).</li>
+<li>Sistemes de raonament lògic que poden deduir conclusions a partir de premisses i regles.</li>
+<li>Sistemes de processament del llenguatge natural que utilitzen gramàtiques i regles per a analitzar i generar text.</li>
+</ul>
+<p>Esta seria la part que veuriem en este mòdul de <strong>Models d'Inteligència Artificial</strong>. </p>
+<p>La <strong>IA basada en dades (o computacional)</strong>, en canvi, es fonamenta en l'aprenentatge automàtic i l'anàlisi de grans volums de dades per a identificar patrons i fer prediccions. No treballa amb regles sino amb exemples i generalitzacions. Este enfocament ha guanyat popularitat en els darrers anys gràcies a l'augment de la potència de càlcul i la disponibilitat de dades massives. Ací entraria tant el <strong>Machine Learning</strong> com el <strong>Deep Learning</strong> (ja veurem les diferències).</p>
+<p>Exemples d'<strong>IA basada en dades</strong> inclouen:</p>
+<ul>
+<li>Algoritmes de classificació i regressió que utilitzen dades històriques per a fer prediccions sobre esdeveniments futurs.</li>
+<li>Xarxes neuronals que aprenen a reconèixer patrons en imatges, veu o text.</li>
+<li>Models de processament del llenguatge natural que utilitzen tècniques d'aprenentatge automàtic per a analitzar i generar text de manera coherent. Per exemple, per mantindre una conversa o per fer <strong><em>anàlisi de sentiments</em></strong> (determinar si un text expressa una opinió positiva, negativa o neutra).</li>
+<li>Sistemes de recomanació que utilitzen dades d'usuari per a suggerir contingut personalitzat, com pel·lícules, música o productes.</li>
+</ul>
+<p>La part de la IA basada en dades i en l'aprenentatge automàtic és la que veurem en este mòdul. La IA simbòlica (algorismes, processament del llenguatge natural, robòtica, sistemes experts, etc.) se veurà al mòdul de <strong>Models d'Intel·ligència Artificial</strong>.</p>
+<p>Podríem dir que la IA simbòlica <strong>se programa</strong> a la manera (més o menys) tradicional, mentre que la IA basada en dades <strong>s'entrena</strong> a partir de dades. Això implica que la IA simbòlica requereix un coneixement previ i explícit per a funcionar, mentre que la IA basada en dades pot aprendre de manera autònoma a partir de les dades que se li proporcionen.</p>
+<p>També se parla d'una <strong>IA híbrida</strong>, que combina xarxes neuronals (de la IA computacional) amb regles i representacions simbòliques (de la IA simbòlica o convencional). En eixa classificació podrien entrar eines com chatGPT.</p>
+<p><img alt="IA simbòlica vs IA basada en dades" src="img/grafic_IA_simb_dades.png" /></p>
+<h3 id="ia-generativa">IA Generativa</h3>
+<p>La <strong>IA generativa</strong> és un tipus d'intel·ligència artificial que es centra en la creació de contingut nou i original, com imatges, música, text o fins i tot vídeos. A diferència d'altres tipus d'IA que es basen en l'anàlisi i la classificació de dades existents, la IA generativa utilitza models avançats per a generar contingut que no existia prèviament.</p>
+<p>Podríem classificar la IA generativa dins de la IA basada en dades, ja que utilitza grans quantitats de dades per a entrenar els seus models. No obstant això, la seua capacitat per a crear contingut nou i original la fa destacar com un tipus d'IA amb característiques pròpies.</p>
+<h2 id="camps-daplicacio-de-la-ia">Camps d'aplicació de la IA</h2>
+<p>La intel·ligència artificial té una àmplia gamma d'aplicacions en diversos camps. Algunes de les àrees més destacades on s'està utilitzant la IA són:</p>
+<ul>
+<li><strong>Processament del llenguatge natural (NLP)</strong>: La IA s'utilitza per a analitzar, comprendre i generar text en llenguatge humà. Això inclou traducció automàtica, assistents virtuals, anàlisi de sentiments i generació de text.</li>
+<li><strong>Visió per computador</strong>: La IA s'aplica en el reconeixement d'imatges i vídeos, permetent la detecció d'objectes, el reconeixement facial i la classificació d'imatges. Això és útil en àrees com la seguretat, la salut i l'automoció.</li>
+<li><strong>Robòtica</strong>: La IA s'utilitza per a controlar robots i sistemes autònoms, permetent-los realitzar tasques complexes com la navegació, la manipulació d'objectes i la interacció amb humans. Això inclou robots de neteja, drones i vehicles autònoms.</li>
+<li><strong>Sistemes de recomanació</strong>: La IA s'aplica en plataformes com Netflix, Amazon i Spotify per a suggerir contingut personalitzat als usuaris, basant-se en les seues preferències i comportaments anteriors.</li>
+<li><strong>Models predictius</strong>: La IA s'utilitza per a analitzar dades històriques i fer prediccions sobre esdeveniments futurs. Això és útil en àrees com la salut, les finances, el clima i la logística, entre altres.</li>
+<li><strong>Models generatius</strong>: La IA s'aplica en la creació de contingut nou, com imatges, música i text. Això inclou models com DALL-E, que generen imatges a partir de descripcions textuals, i GPT-3, que pot generar text coherent i realista (això formaria part del camp del processament del llenguatge natural).</li>
+<li><strong>Agents intel·ligents</strong>: La IA s'utilitza per a crear agents autònoms que poden interactuar amb el seu entorn, prendre decisions i aprendre de l'experiència. Això inclou sistemes de navegació, assistents virtuals i robots autònoms. Ara parlarem d'ells.</li>
+</ul>
+<h2 id="agents-intelligents">Agents intel·ligents</h2>
+<p>Els agents intel·ligents són entitats capaces de percebre el seu entorn a través de sensors i actuar-hi mitjançant efectors per assolir objectius específics. Se caracteritzen per tindre:</p>
+<ul>
+<li>autonomia</li>
+<li>reactivitat</li>
+<li>proactivitat (iniciativa)</li>
+<li>capacitat d'interactuar</li>
+<li>memòria i planificació (context intern i extern)</li>
+</ul>
+<p>Components d'un agent intel·ligent:</p>
+<ul>
+<li><strong>Sensors(S)</strong>: Els sensors són dispositius que permeten a l'agent percebre informació sobre el seu entorn. Poden incloure càmeres, micròfons, sensors de temperatura, GPS, entre d'altres. La informació que recopilen els sensors s'utilitza per representar l'estat actual de l'entorn.</li>
+<li><strong>Actuadors(A)</strong>: Els actuadors són els mitjans mitjançant els quals l'agent interactua amb el seu entorn. Poden ser rodes en un robot, motors en un braç robòtic o simplement sortides de dades en un sistema de programari. Els actuadors permeten que l'agent faci accions per assolir els objectius.</li>
+<li><strong>Funció (F)</strong>: La funció de l'agent representa el comportament de l'agent segons les percepcions que rep. Pren com a entrada l'estat actual de l'entorn i torna una acció que l'agent ha d'executar. Aquesta funció pot ser simple o complexa, depenent de la complexitat de la tasca que lagent ha de realitzar.</li>
+<li><strong>Arquitectura (A)</strong>: L'arquitectura de l'agent fa referència a com s'organitza l'agent en termes dels seus components i com interactuen entre si. Hi pot haver diferents arquitectures segons la complexitat de la tasca i els requisits de rendiment.</li>
+</ul>
+<p>Exemples comuns podrien ser:</p>
+<ul>
+<li>un sistema de navegació o conducció automàtica</li>
+<li>un robot de neteja automàtic</li>
+<li>un assistent virtual com Siri o Alexa</li>
+<li>un sistema de recomanació de contingut en línia</li>
+</ul>
+<h3 id="protocols-acp-i-mcp">Protocols ACP i MCP</h3>
+<p>Els protocols de comunicació entre agents (<strong>ACP, Agent Communication Protocols</strong>) són conjunts de regles i convencions que permeten als agents intel·ligents intercanviar informació i coordinar les seues accions en un entorn compartit. Aquests protocols són essencials per a la col·laboració i la cooperació entre agents en sistemes multi-agent.</p>
+<p>D'altra banda, els protocols (<strong>MCP, Model Context Protocols</strong>) són dissenyats per gestionar i compartir informació sobre el context en què operen els agents. Aquests protocols permeten als agents accedir a recursos externs, i per tant adaptar el seu comportament segons les condicions canviants de l'entorn i les necessitats dels altres agents.</p>
+<h2 id="implicacions-etiques-i-socials">Implicacions ètiques i socials</h2>
+<ul>
+<li>Protecció de dades i privacitat: Com es gestionen les dades personals i sensibles en els sistemes d'IA?</li>
+<li>Informació molt personal i consentiment: Com es garanteix que els usuaris donen el seu consentiment informat per a l'ús de les seues dades?</li>
+<li>Discriminació i biaixos: Com es poden evitar els biaixos en els models d'IA que poden portar a la discriminació de certs grups?</li>
+<li>Seguretat i responsabilitat: Qui és responsable en cas d'errors o danys causats per sistemes d'IA?</li>
+<li>Autonomia i control: Com es pot garantir que els sistemes d'IA no prenguin decisions que afecten la vida de les persones sense supervisió humana?</li>
+<li>Impacte en la societat: Com afectarà la IA a les relacions socials, la cultura i la política?</li>
+<li>Transparència i explicabilitat: Com es poden explicar les decisions preses per sistemes d'IA?</li>
+<li>Impacte en l'ocupació: Com afectarà la IA al mercat laboral i a les professions tradicionals?</li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

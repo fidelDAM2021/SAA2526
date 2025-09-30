@@ -1,0 +1,633 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../u01/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>Presentació - Mòdul: Sistemes d'Aprenentatge Automàtic (CE IA i Big Data) Curs 25/26</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.e53b48f4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../styles/taules.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#presentacio-del-modul-sistemes-daprenentatge-automatic-saa" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Mòdul: Sistemes d&#39;Aprenentatge Automàtic (CE IA i Big Data) Curs 25/26" class="md-header__button md-logo" aria-label="Mòdul: Sistemes d'Aprenentatge Automàtic (CE IA i Big Data) Curs 25/26" data-md-component="logo">
+      
+  <img src="../img/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Mòdul: Sistemes d'Aprenentatge Automàtic (CE IA i Big Data) Curs 25/26
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Presentació
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Mòdul: Sistemes d&#39;Aprenentatge Automàtic (CE IA i Big Data) Curs 25/26" class="md-nav__button md-logo" aria-label="Mòdul: Sistemes d'Aprenentatge Automàtic (CE IA i Big Data) Curs 25/26" data-md-component="logo">
+      
+  <img src="../img/logo.svg" alt="logo">
+
+    </a>
+    Mòdul: Sistemes d'Aprenentatge Automàtic (CE IA i Big Data) Curs 25/26
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Inici
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Presentació
+    
+      <br>
+      <small>Mòdul Sistemes d'Aprenentatge Automàtic</small>
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Presentació
+    
+      <br>
+      <small>Mòdul Sistemes d'Aprenentatge Automàtic</small>
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#descripcio-del-modul-saa" class="md-nav__link">
+    <span class="md-ellipsis">
+      Descripció del mòdul SAA
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#temporalitzacio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Temporalització
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objectius" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objectius
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#competencies-professionals" class="md-nav__link">
+    <span class="md-ellipsis">
+      Competències professionals
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#continguts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Continguts
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unitats-de-programacio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Unitats de programació
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metodologia" class="md-nav__link">
+    <span class="md-ellipsis">
+      Metodologia
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../u01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1. Introducció a la Intel·ligència Artificial
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#descripcio-del-modul-saa" class="md-nav__link">
+    <span class="md-ellipsis">
+      Descripció del mòdul SAA
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#temporalitzacio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Temporalització
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objectius" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objectius
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#competencies-professionals" class="md-nav__link">
+    <span class="md-ellipsis">
+      Competències professionals
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#continguts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Continguts
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unitats-de-programacio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Unitats de programació
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metodologia" class="md-nav__link">
+    <span class="md-ellipsis">
+      Metodologia
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="presentacio-del-modul-sistemes-daprenentatge-automatic-saa">Presentació del mòdul Sistemes d'Aprenentatge Automàtic (SAA)</h1>
+<h3>Professor: Fidel Oltra</h3>
+<h3>Contacte: jf.oltralandete@edu.gva.es</h3>
+
+<h2 id="descripcio-del-modul-saa">Descripció del mòdul SAA</h2>
+<p>El mòdul de <strong>Sistemes d'Aprenentatge Automàtic</strong> (SAA) forma part del <strong>Curs d'Especialització en IA i Big Data</strong> (IABD) i té una durada de 90 hores. El mòdul està dissenyat per proporcionar als estudiants els coneixements i habilitats necessaris per analitzar i relacionar les tècniques d'aprenentatge automàtic amb la predicció de comportaments futurs que milloren l'eficiència operativa de les organitzacions i empreses.</p>
+<h2 id="temporalitzacio">Temporalització</h2>
+<p>3 hores a la setmana al llarg de 30 setmanes.</p>
+<p>Dilluns: 18:45 - 21:30<br/> </p>
+<h2 id="objectius">Objectius</h2>
+<p>Els objectius generals del Curs d'Especialització en IA i Big Data se concreten, en cada mòdul, en els seus Resultats d'Aprenentatge (RA) i Criteris d'Avaluació (CA) que se detallen en la programació del mòdul.</p>
+<p>Els Resultats d'Aprenentatge (RA) específics del mòdul SAA són:</p>
+<ul>
+<li>
+<p><strong>RA1:</strong> Caracteritza la intel·ligència artificial forta i feble determinant els seus usos i possibilitats.</p>
+</li>
+<li>
+<p><strong>RA2:</strong> Determina tècniques i eines de sistemes d'aprenentatge automàtic (Machine Learning), testejant la seua aplicabilitat en la resolució de problemes.</p>
+</li>
+<li>
+<p><strong>RA3:</strong> Aplica algorismes d'aprenentatge supervisat, optimitzant el resultat del model i minimitzant els riscos associats.</p>
+</li>
+<li>
+<p><strong>RA4:</strong> Aplica tècniques d'aprenentatge no supervisat relacionant-les amb els tipus de problemes que tracten de resoldre.</p>
+</li>
+<li>
+<p><strong>RA5:</strong> Aplica models computacionals de xarxes neuronals comparant-los amb altres mètodes d'intel·ligència artificial.</p>
+</li>
+<li>
+<p><strong>RA6:</strong> Valora la qualitat dels resultats obtinguts en la pràctica amb sistemes d'aprenentatge automàtic integrant principis fonamentals de la computació.</p>
+</li>
+</ul>
+<h2 id="competencies-professionals">Competències professionals</h2>
+<ul>
+<li>
+<p>a) Aplicar sistemes d'Intel·ligència Artificial per identificar noves formes d'interacció en els negocis que milloren la productivitat.</p>
+</li>
+<li>
+<p>c) Gestionar la transformació digital necessària a les organitzacions per a la consecució de l’eficiència empresarial mitjançant el tractament de dades.</p>
+</li>
+<li>
+<p>d) Aplicar Intel·ligència Artificial en funcionalitats, processos i sistemes de decisió empresarials.</p>
+</li>
+<li>
+<p>e) Gestionar els diferents tipus d'Intel·ligència Artificial per a la consecució de transformació i canvi en les empreses.</p>
+</li>
+<li>
+<p>f) Administrar el desenvolupament de processos automatitzats que permeten la millora de la productivitat de les empreses.</p>
+</li>
+<li>
+<p>g) Optimitzar el desenvolupament de processos autònoms utilitzant eines d'Intel·ligència Artificial.</p>
+</li>
+<li>
+<p>j) Executar el sistema d’explotació de dades segons les necessitats d’ús i les condicions de seguretat establertes assegurant el compliment dels principis legals i ètics.</p>
+</li>
+<li>
+<p>k) Configurar les eines que es fan servir per construir solucions Big Data i d’Intel·ligència Artificial.</p>
+</li>
+</ul>
+<h2 id="continguts">Continguts</h2>
+<p>Els continguts d’aquest mòdul professional, segons estableix el currículum vigent, són els següents:</p>
+<ul>
+<li>
+<p><strong>C1</strong>. Caracterització de l'Intel·ligència Artificial forta i feble.</p>
+</li>
+<li>
+<p><strong>C2</strong>. Determinació de Sistemes d'Aprenentatge Automàtic.</p>
+</li>
+<li>
+<p><strong>C3</strong>. Algorismes aplicables a l'aprenentatge supervisat i optimització del model.</p>
+</li>
+<li>
+<p><strong>C4</strong>. Aplicació de tècniques d'aprenentatge no supervisat.</p>
+</li>
+<li>
+<p><strong>C5</strong>. Aplicació de models computacionals de xarxes neuronals i comparatives amb altres models.</p>
+</li>
+<li>
+<p><strong>C6</strong>. Valoració de la qualitat dels resultats obtinguts en la pràctica amb sistemes d'aprenentatge automàtic.</p>
+</li>
+</ul>
+<h2 id="unitats-de-programacio">Unitats de programació</h2>
+<p><strong>UP01</strong>: Introducció als Sistemes d'Aprenentatge Automàtic.<br/>
+<strong>UP02</strong>: Machine Learning.<br/>
+<strong>UP03</strong>: Aprenentatge supervisat.<br/>
+<strong>UP04</strong>: Aprenentatge no supervisat.<br/>
+<strong>UP05</strong>: Xarxes neuronals.<br/>
+<strong>UP06</strong>: Avaluació, optimització i implementació de models.</p>
+<h2 id="metodologia">Metodologia</h2>
+<ul>
+<li>
+<p>Apunts, exemples, pràctiques i documentació en la plataforma <strong>Aules</strong>.</p>
+</li>
+<li>
+<p><strong>Aprenentatge basat en Reptes (ABR) i Projectes (ABP)</strong>, mitjançant el desenvolupament primer de reptes més concrets i, més endavant, de projectes intermodulars reals complets, proposats, sempre que siga possible, en col·laboració amb empreses i organitzacions.</p>
+</li>
+<li>
+<p><strong>Aprenentatge col·laboratiu</strong>, en els propis projectes i reptes, que s'abordaran mitjançant el treball en equip i amb eines de gestió de projectes.</p>
+</li>
+<li>
+<p><strong>Classe invertida (Flipped Classroom)</strong>, on l'alumnat treballa els continguts pel seu compte, i aprofita els problemes que va trobant al llarg del desenvolupament dels projectes i reptes, o en la resolució d'exercicis, per preguntar a l'aula els seus dubtes. La classe per tant esdevé un espai de resolució de dubtes i d'aplicació pràctica dels continguts.</p>
+</li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>
