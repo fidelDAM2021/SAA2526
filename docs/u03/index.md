@@ -100,11 +100,35 @@ Anem a repassar les mesures més comunes d'estadística descriptiva:
 ***de dispersió***
 
 - **Rang**: La diferència entre el valor màxim i el mínim d'un conjunt de dades. Indica l'amplitud de la variació.
-- **Desviació estàndard**: Mesura de la dispersió dels valors respecte a la mitjana. Una desviació estàndard alta indica que els valors estan molt dispersos.
-- **Variança**: Mesura de la dispersió dels valors respecte a la mitjana. És el quadrat de la desviació estàndard i indica com de dispersos estan els valors al voltant de la mitjana.
+- **Desviació estàndard**: Mesura de la dispersió dels valors respecte a la mitjana. Una desviació estàndard alta indica que els valors estan molt dispersos. Se calcula sumant les diferències entre cada valor i la mitjana i fent la mitjana d'eixes diferències.
+- **Variança**: Mesura de la dispersió dels valors respecte a la mitjana. És el quadrat de la desviació estàndard i indica com de dispersos estan els valors al voltant de la mitjana. Se calcula fent la mateixa operació que per a la desviació estàndard, però elevant al quadrat les diferències abans de sumar-les.
+
+La fórmula de la **variança** per a una mostra és:
+
+$$
+\sigma^2 = \frac{1}{n} \sum_{i=1}^{n} (x_i - \bar{x})^2
+$$
+
+on $\sigma^2$ és la variança, $n$ és el nombre de valors, $x_i$ cada valor i $\bar{x}$ la mitjana.
+
+La **desviació estàndard** també pot calcular-se com l'arrel quadrada de la variança:
+$$
+\sigma = \sqrt{\sigma^2}
+$$
+
+> Tot i que la variança i la desviació estàndard són molt similars, la desviació estàndard és més fàcil d'interpretar perquè està en les mateixes unitats que les dades originals, mentre que la variança és més útil per a càlculs matemàtics i estadístics.
+
+![Desviació estàndard](imatges/u03-desviacio.jpg)
+
 - **Quartils** i **Rang interquartilic**: Divisió dels valors en quatre parts iguals. El primer quartil (Q1) és el valor que separa el 25% inferior del conjunt de dades, el segon quartil (Q2) és la mediana i el tercer quartil (Q3) és el valor que separa el 75% inferior del conjunt de dades. Els **quartils** avaluen la dispersió i simetria de les dades. El **rang interquartilic** (IQR) és la diferència entre el tercer quartil i el primer quartil, i mesura la dispersió dels valors centrals del conjunt de dades eliminant els valors molt alts (quart quartil) i molt baixos (primer quartil).
 
-Hi ha una altra mesura que és important per a l'anàlisi de dades, encara que no pertany a les mesures de tendència central o dispersió, que és la **correlació**. La correlació ens troba la relació entre dues variables. Eixa relació pot ser ***positiva*** (ambdues variables augmenten juntes), ***negativa*** (quan una augmenta l'altra disminueix) o ***nul·la*** (no hi hap relació entre les variables). És útil quan volem saber si dues variables estan relacionades i, si és així, com ho estan.
+![Quartils i rang interquartilic](imatges/u03-quartils.png)
+
+> Fixeu-vos que només hi ha 3 quartils (Q1, Q2 i Q3). Això pot portar a confusió amb la paraula "quartil", que sembla indicar que hi ha quatre divisions. En realitat sí que hi ha quatre divisions, però la paraula "quartil" fa referència als punts que separen les divisions, per això només hi ha tres quartils.
+
+Per a què aprofiten els quartils en estadística? Doncs, com hem vist, és una altra forma de veure com de disperses estan les dades. Si la diferència entre Q1 i Q3 és gran, vol dir que hi ha molta dispersió en les dades centrals. Si la diferència és petita, vol dir que les dades centrals estan més agrupades.
+
+Hi ha una altra mesura que és important per a l'anàlisi de dades, encara que no pertany a les mesures de tendència central o dispersió, que és la **correlació**. La correlació ens troba la relació entre dues variables. Eixa relació pot ser ***positiva*** (ambdues variables augmenten juntes), ***negativa*** (quan una augmenta l'altra disminueix) o ***nul·la*** (no hi hap relació entre les variables). És útil quan volem saber si dues variables estan relacionades i, si és així, com ho estan. Això serà important quan comencem a entrenar models d'aprenentatge automàtic, perquè ens ajudarà a seleccionar les variables més rellevants per al model.
 
 ### Mesures d'estadística en Python
 
