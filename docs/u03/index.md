@@ -109,7 +109,7 @@ $$
 \sigma^2 = \frac{1}{n} \sum_{i=1}^{n} (x_i - \bar{x})^2
 $$
 
-On $\sigma^2$ és la variança, $$n$$ és el nombre de valors, $$x_i$$ cada valor i $$\bar{x}$$ la mitjana$$.
+On $\sigma^2$ és la variança, $n$ és el nombre de valors, $x_i$ cada valor i $\bar{x}$ la mitjana.
 
 
 
@@ -330,7 +330,7 @@ $$f(x) = \frac{1}{\sigma \sqrt{2\pi}} e^{-\frac{(x - \mu)^2}{2\sigma^2}}$$
 
 On:
 
-- $$f(x)$$ és la funció de densitat de probabilitat.
-- $$\mu$$ és la mitjana de la distribució.
-- $$\sigma$$ és la desviació estàndard de la distribució.
-- $$e$$ és la base del logaritme natural (aproximadament 2.71828).
+- $f(x)$ és la funció de densitat de probabilitat.
+- $\mu$ és la mitjana de la distribució.
+- $\sigma$ és la desviació estàndard de la distribució.
+- $e$ és la base del logaritme natural (aproximadament 2.71828).
