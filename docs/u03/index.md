@@ -109,12 +109,13 @@ $$
 \sigma^2 = \frac{1}{n} \sum_{i=1}^{n} (x_i - \bar{x})^2
 $$
 
-on $\sigma^2$ és la variança, $n$ és el nombre de valors, $x_i$ cada valor i $\bar{x}$ la mitjana.
+On $\sigma^2$ és la variança, $$n$$ és el nombre de valors, $$x_i$$ cada valor i $$\bar{x}$$ la mitjana$$.
+
+
 
 La **desviació estàndard** també pot calcular-se com l'arrel quadrada de la variança:
-$$
-\sigma = \sqrt{\sigma^2}
-$$
+
+$$\sigma = \sqrt{\sigma^2}$$
 
 > Tot i que la variança i la desviació estàndard són molt similars, la desviació estàndard és més fàcil d'interpretar perquè està en les mateixes unitats que les dades originals, mentre que la variança és més útil per a càlculs matemàtics i estadístics.
 
@@ -325,4 +326,11 @@ La funció de densitat de probabilitat proporciona una representació matemàtic
 
 L’expressió matemàtica que descriu aquesta funció de densitat de probabilitat és:
 
-![Distribució de probabilitat](imatges/u03-dist-prob.jpg)
+$$f(x) = \frac{1}{\sigma \sqrt{2\pi}} e^{-\frac{(x - \mu)^2}{2\sigma^2}}$$
+
+On:
+
+- $$f(x)$$ és la funció de densitat de probabilitat.
+- $$\mu$$ és la mitjana de la distribució.
+- $$\sigma$$ és la desviació estàndard de la distribució.
+- $$e$$ és la base del logaritme natural (aproximadament 2.71828).
