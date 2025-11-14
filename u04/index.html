@@ -1,0 +1,1024 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../u03/">
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>4. Aprenentatge supervisat - Mòdul: Sistemes d'Aprenentatge Automàtic (CE IA i Big Data) Curs 25/26</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.618322db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../styles/taules.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#aprenentatge-supervisat" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Mòdul: Sistemes d&#39;Aprenentatge Automàtic (CE IA i Big Data) Curs 25/26" class="md-header__button md-logo" aria-label="Mòdul: Sistemes d'Aprenentatge Automàtic (CE IA i Big Data) Curs 25/26" data-md-component="logo">
+      
+  <img src="../img/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Mòdul: Sistemes d'Aprenentatge Automàtic (CE IA i Big Data) Curs 25/26
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              4. Aprenentatge supervisat
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Mòdul: Sistemes d&#39;Aprenentatge Automàtic (CE IA i Big Data) Curs 25/26" class="md-nav__button md-logo" aria-label="Mòdul: Sistemes d'Aprenentatge Automàtic (CE IA i Big Data) Curs 25/26" data-md-component="logo">
+      
+  <img src="../img/logo.svg" alt="logo">
+
+    </a>
+    Mòdul: Sistemes d'Aprenentatge Automàtic (CE IA i Big Data) Curs 25/26
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inici
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../documents/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Presentació
+  
+
+    
+      <br>
+      <small>Mòdul Sistemes d'Aprenentatge Automàtic</small>
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../u01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Introducció a la Intel·ligència Artificial
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../u02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Introducció als Sistemes d'Aprenentatge Automàtic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../u03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Preprocessament i estadística
+  
+
+    
+      <br>
+      <small>Sistemes d'aprenentatge automàtic</small>
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Aprenentatge supervisat
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Aprenentatge supervisat
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#algorismes-basics-daprenentatge-supervisat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Algorismes bàsics d'aprenentatge supervisat
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Algorismes bàsics d&#39;aprenentatge supervisat">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#regressio-lineal-normal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Regressió lineal normal
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#regressio-lineal-multiple" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Regressió lineal múltiple
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#regressio-polinomica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Regressió polinòmica
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#regressio-logistica-binaria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Regressió logística binària
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#regressio-logistica-multiclase-multinomial-o-softmax" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Regressió logística multiclase (multinomial o softmax)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arbres-de-decisio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Arbres de decisió
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#random-forest" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Random Forest
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#k-nearest-neighbors-knn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        K-Nearest Neighbors (KNN)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#support-vector-machines-svm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Support Vector Machines (SVM)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#naive-bayes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Naive Bayes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#algorismes-basics-daprenentatge-supervisat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Algorismes bàsics d'aprenentatge supervisat
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Algorismes bàsics d&#39;aprenentatge supervisat">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#regressio-lineal-normal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Regressió lineal normal
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#regressio-lineal-multiple" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Regressió lineal múltiple
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#regressio-polinomica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Regressió polinòmica
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#regressio-logistica-binaria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Regressió logística binària
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#regressio-logistica-multiclase-multinomial-o-softmax" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Regressió logística multiclase (multinomial o softmax)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arbres-de-decisio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Arbres de decisió
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#random-forest" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Random Forest
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#k-nearest-neighbors-knn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        K-Nearest Neighbors (KNN)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#support-vector-machines-svm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Support Vector Machines (SVM)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#naive-bayes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Naive Bayes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="aprenentatge-supervisat">Aprenentatge supervisat</h1>
+<p>En l'aprenentatge supervisat, el model s'entrena amb un conjunt de dades etiquetades, és a dir, dades que ja contenen la resposta correcta. L'objectiu és que el model aprenga a fer prediccions o classificacions basades en aquestes dades. Les dades d'entrada s'anomenen <strong>features</strong> o <strong>atributs</strong>, mentre que les dades correctes de sortida s'anomenen <strong>etiquetes</strong> o <strong>targets</strong>.</p>
+<p>En este cas és quan dividim el dataset en un conjunt d'entrenament i un conjunt de prova. El conjunt d'entrenament s'utilitza per ajustar el model (li subministrem les dades amb els seus atributs i també les eixides o etiquetes correctes), mentre que el conjunt de prova (només amb els atributs) s'utilitza per avaluar-ne el rendiment del model entrenat.</p>
+<p>Un exemple on podríem utilitzar algorismes d'aprenentatge supervisat podria ser la classificació de correus electrònics com a spam o no spam, on els correus estan etiquetats prèviament. O també la predicció del preu d'una casa basada en característiques com la ubicació, la superfície o l'antiguitat de la propietat.</p>
+<h2 id="algorismes-basics-daprenentatge-supervisat">Algorismes bàsics d'aprenentatge supervisat</h2>
+<p>Recordeu que els algorismes d'aprenentatge supervisat se poden classificar en dos grups: <strong>regressió</strong> i <strong>classificació</strong>.</p>
+<p><img alt="Aprenentatge supervisat" src="imatges/u04-supervisat.jpg" /></p>
+<p>Els <strong>algorismes de classificació</strong> s'utilitzen per assignar etiquetes o classes a les dades d'entrada. L'objectiu és predir la classe a la qual pertany una nova observació basant-se en un conjunt de dades d'entrenament. Per exemple:</p>
+<ul>
+<li>un correu és spam o no (binària)</li>
+<li>una persona té una malaltia o no (binària)</li>
+<li>a quin grup o categoria pertany un element (multiclasse, si hi ha més de dos grups)</li>
+</ul>
+<p>Els algorismes de classificació típics dins de l'aprenentatge supervisat són:</p>
+<ul>
+<li><strong>Arbres de decisió</strong></li>
+<li><strong>Random Forest</strong></li>
+<li><strong>K-Nearest Neighbors (KNN)</strong></li>
+<li><strong>Support Vector Machines (SVM)</strong></li>
+<li><strong>Naive Bayes</strong> i les seues diferents variacions</li>
+</ul>
+<p>També podem incloure com algorisme de classificació la <strong>regressió logística</strong>. Tot i utilitzar la regressió lineal per predir probabilitats, en general s'utilitzen per problemes de classificació binària. És a dir, ofereixen probabilitats de que un element pertanya a una classe o una altra.</p>
+<p>D'altra banda, els <strong>algorismes de regressió</strong> s'utilitzen per predir valors continus, generalment numèrics. La regressió busca un valor en una sèrie o rang continu. Per exemple:</p>
+<ul>
+<li>un preu</li>
+<li>una demanda d'energia</li>
+<li>una estimació d'antiguitat</li>
+<li>una estimació de vendes</li>
+</ul>
+<p>Els algorismes de regressió típics són:</p>
+<ul>
+<li><strong>Regressió lineal</strong></li>
+<li><strong>Regressió polinòmica</strong></li>
+</ul>
+<p>Els <strong>vectors de suport</strong> i els <strong>arbres de decisions</strong> també se poden utilitzar, si la variable objectiu és continua, com a algorismes de regressió. Els <strong>SVR</strong> (Support Vector Regression) són una variant dels SVM adaptada per a problemes de regressió. Són útils si la relació entre les variables d'entrada i la variable objectiu no és lineal.</p>
+<blockquote>
+<p>Com hem comentat abans, la <strong>regressió logística</strong> se considera un model més discriminatiu i, per tant, orientat a tasques de classificació.</p>
+</blockquote>
+<p>Ara anirem veient un per un, amb una miqueta més de detall, els principals algorismes que hem anomenat.</p>
+<h3 id="regressio-lineal-normal">Regressió lineal normal</h3>
+<p><strong>Tipus</strong>: supervisat / regressió</p>
+<p><strong>Casos d'ús:</strong> predicció de un valor <em>y</em> (variable dependent) a partir dels valors d'una variable <em>x</em> (variable independent). Suposem que hi ha una relació lineal entre ambdues variables. Això vol dir que un canvi en <em>x</em> provoca un canvi proporcional en <em>y</em>. Si la relació no és lineal, podem utilitzar altres tipus de regressió (per exemple, la regressió polinòmica que veurem més endavant).</p>
+<p><strong>Com funciona:</strong> ajusta una funció lineal que prediu el valor de <em>y</em> de la manera més exacta possible a partir del valor de <em>x</em>. Sempre hi haurà un marge d'error entre les prediccions i els valors reals, el que s'intenta és minimitzar eixe marge.</p>
+<p>Primer se genera una recta tal que minimitze la diferència entre la pròpia recta i els punts que indiquen els valors <em>y</em> coneguts per als valors <em>x</em> coneguts. Normalment s'utilitza l'<strong>error quadràtic mitjà</strong> (MSE, Mean Squared Error) per mesurar aquesta diferència. Se calcula fent la mitjana dels quadrats de les diferències entre els valors reals i les prediccions del model, i s'ajusta la recta per minimitzar aquest valor.</p>
+<p>$MSE=\frac{1}{n}\sum_{i=1}^{n}(y_{i}-\hat{y}_{i})^{2}$</p>
+<p>On <em>n</em> és el nombre de mostres, <em>$y_{i}$</em> és el valor real i <em>$\hat{y}_{i}$</em> és el valor predït pel model.</p>
+<p>La funció lineal té la forma: </p>
+<p>$y = b_{1}x + b_{0}$</p>
+<p>on <em>$b_{1}$</em> és la pendent de la línia i <em>$b_{0}$</em> és la intersecció amb l'eix <em>y</em> quan el valor de <em>x</em> és 0.</p>
+<blockquote>
+<p>Nosaltres no necessitarem calcular el MSE, ni la recta, ni la pendent ni el punt d'intersecció manualment, sinó que ho farà tot l'algorisme per nosaltres a partir de les dades d'entrenament. Ho veurem en els exemples pràctics.</p>
+</blockquote>
+<p>Si veiem que el model no produeix els resultats esperats, podem veure si hi ha molts <em>outliers</em> (valors molt desplaçats de la recta, en este cas) i decidir què fem en ells (eliminar-los, o fer altre tipus de preprocessament com hem vist abans).</p>
+<p><strong>Exemples:</strong> </p>
+<ul>
+<li>predir el preu d'un pis segons els metres quadrats</li>
+<li>predir la nota d'un estudiant segons les hores d'estudi que dedica al dia</li>
+</ul>
+<p><img alt="Regressió lineal" src="imatges/u04-regressio-lineal.jpg" /></p>
+<h3 id="regressio-lineal-multiple">Regressió lineal múltiple</h3>
+<p><strong>Tipus</strong>: supervisat / regressió</p>
+<p><strong>Casos d'ús</strong>: predicció de un valor <em>y</em> (variable dependent) a partir dels valors d'un conjunt de valors  <em>x_{1}, x_{2}, ..., x_{n}</em> (variables independents). Suposem que hi ha una relació lineal entre totes les variables independents i la dependent. Això vol dir que un canvi en qualsevol dels valors de <em>x_{1}, x_{2}, ..., x_{n}</em> provoca un canvi proporcional en <em>y</em>. Si per a algun valor de la llista 'x' no es compleix aquesta relació, podem considerar altres models. O si veiem que no hi cap relació, eliminar la variable independent que no aporta informació. Veurem diferents exemples.</p>
+<blockquote>
+<p>De totes formes no és convenient utilitzar molts atributs independents, ja que pot provocar problemes de sobreajustament (overfitting) i dificulta la representació gràfica de les correlacions. Si tenim moltes variables independents, podem utilitzar tècniques de selecció de característiques per reduir-ne la quantitat. També veurem exemples d'això.</p>
+</blockquote>
+<p><strong>Com funciona:</strong> ajusta un pla o hiperplà que minimitza l'error quadràtic entre prediccions i valors reals, utilitzant múltiples variables independents. La funció lineal té la forma:</p>
+<p>$y = b_{1}x_{1} + b_{2}x_{2} + ... + b_{n}x_{n} + b_{0}$</p>
+<p>on <em>$b_{1}, b_{2}, ..., b_{n}$</em> són els coeficients que representen la influència de cada variable independent en la variable dependent, i <em>$b_{0}$</em> és la intersecció amb l'eix <em>y</em> quan tots els valors de <em>x</em> són 0.</p>
+<p>Com en el cas anterior, nosaltres no necessitem calcular res manualment. El que sí hem de procurar és que les dades estiguen ben preparades abans d'entrenar el model perquè si hi ha més d'un valor predictor s'incrementa el risc de situacions que afecten al funcionament correcte del model. Per exemple, si hi ha valors molt desplaçats (<em>outliers</em>) o si les variables estan en escales molt diferents (per exemple, una variable en metres i una altra en quilòmetres), o també si hi ha correlació entre les variables independents (<em>multicolinealitat</em>), ja que això pot dificultar la interpretació dels coeficients i afectar la precisió de les prediccions.</p>
+<p>La <strong>multicolinealitat</strong> es pot detectar mitjançant l'anàlisi de la matriu de correlació entre les variables independents. Si es detecta una alta correlació entre dues o més variables, es pot considerar eliminar-ne alguna o utilitzar tècniques com l'anàlisi de components principals (PCA) per reduir la dimensionalitat de les dades.</p>
+<p>Veurem exemples pràctics de tot, de moment només cal entendre els conceptes.</p>
+<p><strong>Exemple:</strong> predir el preu d'un pis segons metres quadrats i quantitat d'habitacions.</p>
+<h3 id="regressio-polinomica">Regressió polinòmica</h3>
+<p><strong>Tipus</strong>: supervisat / regressió</p>
+<p><strong>Casos d'ús:</strong> predicció de valors continus amb relacions no lineals. Quan representem gràficament la relació entre les variables independents i la dependent, i no es veu una línia recta sinó una corba, podem provar amb la regressió polinòmica per ajustar millor el model a les dades.</p>
+<p>També podem intentar una regressió polinòmica si la regressió lineal no dóna els resultats esperats, o si veiem que hi ha molts <em>outliers</em> desplaçats de la recta i no volem eliminar-los ni transformar-los.</p>
+<p><strong>Com funciona:</strong> ajusta una corba polinòmica als punts de dades. En general el polinomi tindrà grau 2, però se pot ajustar a graus més alts si cal. La funció polinòmica té la forma:</p>
+<p>$y = b_{n}x^{n} + b_{n-1}x^{n-1} + ... + b_{2}x^{2} + b_{1}x + b_{0}$</p>
+<p>on n és el grau del polinomi i <em>$b_{n}, b_{n-1}, ..., b_{1}$</em> són els coeficients que representen la influència de cada terme polinòmic en la variable dependent, i <em>$b_{0}$</em> és la intersecció amb l'eix <em>y</em> quan el valor de <em>x</em> és 0.</p>
+<p><strong>Exemple:</strong> predir l'evolució de la temperatura al llarg del dia.</p>
+<p><img alt="Regressió polinòmica" src="imatges/u04RegresionPolinomica.png" /></p>
+<h3 id="regressio-logistica-binaria">Regressió logística binària</h3>
+<p><strong>Tipus</strong>: supervisat / classificació</p>
+<p><strong>Casos d'ús:</strong> decisions binàries, classificació. Quan la variable que volem predir és categòrica (per exemple, "sí" o "no", "malaltia" o "no malaltia"). Si hi ha més de dues categories, s'ha d'utilitzar la <strong>regressió logística multinomial</strong>.</p>
+<p><strong>Com funciona:</strong> estima probabilitats per a dues classes amb la funció sigmoide (una corba). El que fa es predir la probabilitat de que una mostra pertanya a una classe o a l'altra. Si la probabilitat és major que un cert llindar (normalment 0.5), s'assigna a una classe; si és menor, a l'altra.</p>
+<p>S'utilitzen dues fórmules:</p>
+<ul>
+<li>una funció líneal de la instància de entrada $x$: </li>
+</ul>
+<p>$$\theta^T x = \theta_0 + \sum_{i=1}^{n} \theta_i x_i$$ </p>
+<p>on $\theta^T = (\theta_0, \theta_1, \dots, \theta_n)$ és el vector de paràmetres (pesos) que el model ha d'aprendre durant l'entrenament.</p>
+<ul>
+<li>una funció sigmoide que transforma el resultat de la funció lineal en una probabilitat entre 0 i 1:</li>
+</ul>
+<p>$P(C=1|x)$: $$f_\theta(x) = \frac{1}{1 + e^{-\theta^T x}}$$</p>
+<p>Com sempre, no us heu de preocupar per les fórmules. Ja veurem com utilitzar-ho tot en els exemples pràctics en Python.</p>
+<p><strong>Exemples:</strong> </p>
+<ul>
+<li>acceptació o no d'un crèdit segons ingressos de la persona sol·licitant</li>
+<li>si un client d'un producte renovarà o no la subscripció en funció de l'us que ha fet del servei</li>
+</ul>
+<p><img alt="Regressió logística binària" src="imatges/u04-regressio-logistica.jpg" /></p>
+<h3 id="regressio-logistica-multiclase-multinomial-o-softmax">Regressió logística multiclase (multinomial o softmax)</h3>
+<p><strong>Tipus</strong>: supervisat / classificació</p>
+<p><strong>Casos d'ús:</strong> Quan la variable que volem predir és categòrica i poden haver més de dues categories (per exemple, "baix", "mitjà", "alt" o "roig", "verd", "blau"). </p>
+<p><strong>Com funciona:</strong> estima probabilitats per a dues classes amb la funció sigmoide. Hi ha una fórmula (softmax) que permet predir la probabilitat de que una mostra pertanya a cada classe. La classe amb la probabilitat més alta és la que s'assigna a la mostra. La fórmula és:</p>
+<p>$$f_\theta^{(i)}(x) = \frac{e^{-\theta^{(i)T}x}}{\sum_{j=1}^{|\Omega_C|} e^{-\theta^{(j)T}x}}$$</p>
+<p>L'entrenament del model és obtenir els paràmetres <em>$\theta$</em> que maximitzen la probabilitat de les dades d'entrenament. És a dir, que el model estime una probabilitat alta per a la classe correcta de cada mostra d'entrenament, i una probabilitat baixa de la mateixa mostra per a les altres classes.</p>
+<p>Per minimitzar l'error s'utilitza una funció de cost denominada <strong>cross entropy</strong> que no anem a reproduir ací. </p>
+<blockquote>
+<p>Si la quantitat de classes és igual a 2, aquesta funció de cost és equivalent a la funció de cost utilitzada en la regressió logística binària</p>
+</blockquote>
+<p><strong>Exemple:</strong> sempre que tinguem més de 2 classes de classificació, que siguen excloent entre sí i que no siga una quantitat molt elevada (per a més de 10 o 15 classes ens hauríem de plantejar altres enfocaments com les xarxes neuronals).</p>
+<h3 id="arbres-de-decisio">Arbres de decisió</h3>
+<p><strong>Tipus</strong>: supervisat / classificació i (en alguns casos) regressió.</p>
+<p><strong>Com funciona:</strong> utilitza un esquema tipus arbre, dividint les dades en branques segons preguntes sobre atributs, fins a obtenir les fulles que són les decisions finals. És a dir, si recordem l'estructura d'un arbre amb un node arrel, branques, nodes interns i fulles, l'equivalència seria:</p>
+<ul>
+<li><strong><em>Node arrel</em></strong>: atribut que millor separa o testeja les dades d'entrada. Genera la primera branca.</li>
+<li><strong><em>Nodes interns</em></strong>: atributs utilitzats per particionar o testar les dades en els diferents nivells de l'arbre.</li>
+<li><strong><em>Branques</em></strong>: possibles respostes a les preguntes o casos de prova de cada node (excepte les fulles).</li>
+<li><strong><em>Fulles</em></strong>: decisions finals. Cada fulla té associada una etiqueta que serà el valor assignat per a l'atribut objectiu (classe).</li>
+</ul>
+<p>Al final es tracta d'anar fent preguntes sobre la instància que volem classificar i anar baixant nivells fins que arribem a una fulla que ens donarà la classificació.</p>
+<p>Internament, la construcció de l'arbre es fa de forma recursiva en un disseny <strong><em>top-down</em></strong>. En cada node se tria l'atribut que millor divideix el conjunt d'observacions, amb l'objectiu que cada branca (subconjunt) siga el més homogènia possible i que les branques estiguen més o menys equilibrades. Per seleccionar l'atribut que millor separa les dades, s'utilitzen mesures com el <strong>guany d'informació</strong> (basada en l'entropia) o l'<strong>índex Gini</strong>.</p>
+<p><strong>Casos d'ús:</strong> classificació i regressió amb decisions interpretables.</p>
+<ul>
+<li><strong><em>Classificació</em></strong>: si l'atribut objectiu és categòric (tant fa que siga binari com multiclasse).</li>
+<li><strong><em>Regressió</em></strong>: si l'atribut objectiu és numèric o continu. L'algorisme <strong>CART (Classification and Regression Trees)</strong> és una variant que permet fer arbres de decisió per a problemes de regressió.</li>
+</ul>
+<p>De vegades si no tenim clar quin algorisme aplicar, podem provar amb un arbre de decisió, ja que és fàcil d'entendre i interpretar, i a més no necessita tant de preprocessament de les dades com altres algorismes. També és útil quan s'han de prendre decisions basades en múltiples criteris / atributs.</p>
+<p><strong>Exemple:</strong> a partir d'una sèrie de símptomes i resultats de proves mèdiques, predir si un pacient té una malaltia concreta.</p>
+<p><img alt="Arbre de decisió" src="imatges/u04-arbre-decisio.jpg" /></p>
+<h3 id="random-forest">Random Forest</h3>
+<p><strong>Tipus</strong>: supervisat / classificació i (en alguns casos) regressió.</p>
+<p><strong>Com funciona:</strong> se basa en la combinació de diferentes àrbres de decisió per millorar la precisió i evitar l'<em>overfitting</em>. El que fa és entrenar múltiples arbres de decisió amb diferents subconjunts de dades i diferents subconjunts d'atributs. Després, per a una nova mostra, cada arbre fa una predicció i la classe final es determina per votació majoritària (en classificació) o per mitjana (en regressió).</p>
+<p>Hi ha dues tècniques principals que utilitzen els <strong>Random Forest</strong> per crear diversitat entre els arbres:</p>
+<ol>
+<li><strong>Bagging (Bootstrap Aggregating)</strong>: es creen múltiples subconjunts de dades d'entrenament mitjançant mostreig amb reemplaçament. Cada subconjunt de dades té la mateixa grandària que l'original, però al haver reemplaçament poden haver instàncies repetides. Això significa que cada arbre s'entrena amb un conjunt lleugerament diferent de dades, la qual cosa ajuda a reduir la variància del model i l'<em>overfitting</em>.</li>
+</ol>
+<blockquote>
+<p>Com ja hem comentat en altres ocasions, l'<em>overfitting</em> és un problema que es produeix quan un model s'ajusta massa bé a les dades d'entrenament, fins al punt que captura el soroll i les anomalies en lloc de la tendència general. Això fa que el model funcione molt bé amb les dades d'entrenament però que tinga un rendiment pobre amb noves dades (conjunt de prova).</p>
+</blockquote>
+<p>La tècnica de <strong>Subspace sampling</strong> (mostreig de dades amb un subconjunt d'atributs diferents per cada arbre) també és utiltizada sovint per garantir que els diferents arbres siguen diferents i així evitar l'influència excesiva d'alguns atributs.</p>
+<p>A continuació es mostra una taula comparativa entre un <strong>Random Forest</strong> i un <strong>Arbre de decisió individual</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Aspecte</th>
+<th>Random Forest</th>
+<th>Arbre de Decisió Individual (DecisionTreeClassifier)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Concepte</strong></td>
+<td>Mètode de <em>Ensemble</em> (Bagging)</td>
+<td>Model individual</td>
+</tr>
+<tr>
+<td><strong>Entrenament</strong></td>
+<td>Entrenat en mostres <em>bootstrapped</em> (amb reemplaçament)</td>
+<td>Entrenat amb el dataset complet o partició simple</td>
+</tr>
+<tr>
+<td><strong>Selecció d'Atributs</strong></td>
+<td>Utilitza un subconjunt aleatori d'atributs (max_features per defecte és 'sqrt') en cada divisió.</td>
+<td>Per defecte, considera tots els atributs (max_features és None).</td>
+</tr>
+<tr>
+<td><strong>Risc de Sobreajust</strong></td>
+<td>Baix (mitigat per l'agregació de múltiples resultats).</td>
+<td>Alt (són especialment proclius al sobreaprenentatge o overfitting).</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li><strong>Boosting (selecció aleatòria d'atributs)</strong>: en cada node de cada arbre, en lloc de considerar tots els atributs per triar el millor per dividir les dades, només es considera un subconjunt aleatori d'atributs. Això ajuda a crear arbres més diversos i a reduir la correlació entre ells. A més, mentre en el <strong>bagging</strong> podem executar tots els arbres a la vegada perquè són independents, en el <strong>boosting</strong> l'execució és seqüencial, de forma que el segon arbre se centra sobretot en les dades que l'arbre anterior no ha classificat correctament. Així se va depurant el procés fins al final.</li>
+</ol>
+<p>Una altra diferència entre el <strong>boosting</strong> i el <strong>bagging</strong> és que en el <strong>boosting</strong> la classificació final es basa en un sistema de vots ponderat, de forma que cada arbre no té el mateix pes en la decisió final.</p>
+<p><strong>Casos d'ús:</strong> classificació i regressió amb alta dimensionalitat (molts atributs, com que cada arbre pot no utilitzar-los tots i per tant la dimensionalitat alta no és un problema tan greu), en detecció d'anomalies o en problemes més complexos.</p>
+<p><strong>Exemple:</strong> predir la probabilitat d'una malaltia a partir d'un historial mèdic. Un altre exemple: predir si un client renovarà la subscripció a un servei de streaming basant-se en el seu comportament d'ús.</p>
+<p>A continuació es mostra una taula comparativa entre les tècniques de <strong>Bagging</strong> i <strong>Boosting</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Aspecte</th>
+<th>Bagging (p. ej., Random Forest)</th>
+<th>Boosting (p. ej., AdaBoost)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Flux d'Entrenament</strong></td>
+<td>En paral·lel (independent).</td>
+<td>En seqüència (incremental i dependent).</td>
+</tr>
+<tr>
+<td><strong>Objectiu Principal</strong></td>
+<td>Reduir la variància (mitigar el sobreajust o overfitting).</td>
+<td>Reduir els biaixos (incrementar la complexitat del model per evitar el underfitting).</td>
+</tr>
+<tr>
+<td><strong>Mostreig de Dades</strong></td>
+<td>Uniforme amb reemplaçament (bootstrap).</td>
+<td>Ponderat (les instàncies mal classificades pels models previs reben major pes/probabilitat de ser escollides pel següent model).</td>
+</tr>
+<tr>
+<td><strong>Classificadors Base</strong></td>
+<td>Sovint són models complexos/forts (com arbres de decisió completament desenvolupats o amb poca restricció).</td>
+<td>Sovint són models senzills/dèbils (com els stumps, arbres de decisió de profunditat màxima 1).</td>
+</tr>
+<tr>
+<td><strong>Decisió Final</strong></td>
+<td>Vot per majoria simple o mitjana (en el cas de Random Forest).</td>
+<td>Vot ponderat (cada classificador té un pes en la decisió final).</td>
+</tr>
+<tr>
+<td><strong>Dependència</strong></td>
+<td>Els classificadors individuals són independents entre si.</td>
+<td>Els classificadors individuals són dependents entre si.</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Random Forest" src="imatges/u04-random-forest.jpg" /></p>
+<h3 id="k-nearest-neighbors-knn">K-Nearest Neighbors (KNN)</h3>
+<p><strong>Tipus</strong>: supervisat / classificació (en alguns casos regressió)</p>
+<p><strong>Com funciona:</strong> classifica una mostra segons la majoria de les classes dels K veïns més propers. Donat un conjunt de dades d'entrenament, per a cada mostra a predir KNN troba les mostres d'entrenament més properes a ella i assigna l'etiqueta de classificació més comuna entre elles. KNN es basa en la idea de que elements o dades similars estan a prop uns dels altres en un espai de n dimensions, on n és la quantitat d'atributs predictors.</p>
+<p>Per exemple: en la imatge següent, KNN amb K=3 assignaria l'etiqueta de classificació "triangle vermell" al punt de prova verd perquè de les 3 mostres més properes a ell, la majoria, dues, són triangles vermells. Però si K=5, KNN assignaria l'etiqueta de classificació "quadradet blau" al punt de prova.</p>
+<p><img alt="KNN" src="https://upload.wikimedia.org/wikipedia/commons/e/e7/KnnClassification.svg" /></p>
+<p>KNN també pot utilitzar-se per a problemes de regressió, assignant la mitjana (ponderada o no) dels valors dels punts d'entrenament més propers al punt de prova.</p>
+<p><strong>Casos d'ús:</strong> hem de tenir en compte que l'algorisme <strong>KNN</strong> no aprèn ni s'entrena, simplement utilitza el conjunt de dades com a base de coneixement per a les noves dades. Per tant, cada vegada que ha de fer una predicció utilitza tot el dataset. Això requereix de memòria i recursos de processament importants. Per tant, <strong>KNN</strong> és lent i no recomanable per a conjunts grans de dades.</p>
+<p>Com que KNN es basa en la distància entre les mostres, és molt sensible a l'escalat i a les unitats emprades dels atributs predictors. És important normalitzar o estandarditzar les dades abans d'utilitzar KNN.</p>
+<p><strong>Exemple:</strong> classificar plantes segons mides de les fulles.</p>
+<h3 id="support-vector-machines-svm">Support Vector Machines (SVM)</h3>
+<p><strong>Tipus</strong>: supervisat / classificació (principalment) o regressió (SVR)</p>
+<p><strong>Com funciona:</strong> cada instància de la mostra d'entrenament se dibuixa com un punt en un espai $n$-dimensional, on $n$ és la quantitat d'atributs predictors. L'objectiu és cercar la frontera (un hiperplà) que maximitza la separació entre classes. Això s'aconsegueix calculant la recta que separa els grups de forma que estiga equidistant dels dos punts més propers de cada classe. A estos punts de dades que defineixen la distància del marge se'ls anomena <strong><em>vectors suport</em></strong>.</p>
+<p>Si les dades no són linealment separables, i no és possible trobar un hiperplà que separe les dues classes, s'utilitza el <strong>truc del nucli</strong> (<strong><em>kernel trick</em></strong>). El que fa este procediment és transformar les dades a un espai de major dimensió on sí que es puga trobar un hiperplà que les separe linealment. Això es fa mitjançant funcions de nucli com el nucli lineal, polinòmic o RBF (Radial Basis Function).</p>
+<blockquote>
+<p>No us preocupeu per les fórmules ni els càlculs, ja que Python ens aporta llibreries i funcions per fer-ho tot automàticament. El que hem de intentar saber és quines funcions són millors en cada cas.</p>
+</blockquote>
+<p><strong>Casos d'ús:</strong> classificació binària amb marges clars, també per detecció d'anomalies. En situacions amb prou soroll en les dades, dades mal etiquetades o amb solapament entre classes, les SVM poden no funcionar bé. En eixe cas s'utilitzen hiperparàmetres de regularització que permeten ajustar l'<strong><em>overfitting</em></strong> i la proporció d'errors assumibles. </p>
+<p>Els hiperparàmetres són valors que ens ajuden a optimitzar les nostres funcions a l'hora d'entrenar models. Per exemple, en </p>
+<p><code>clf = svm.SVC(kernel='linear', C=1);</code></p>
+<p>Tant <em>kernel</em> com <em>C</em> són hiperparàmetres. Pel que fa a la regularització, l'hiperparàmetre més comú és <em>C</em>. Un valor alt de <em>C</em> intenta classificar totes les mostres correctament, el que pot portar a un sobreajustament. Un valor baix de <em>C</em> permet més errors en l'entrenament, el que pot millorar la generalització del model però també por portar a un subajustament. L'objectiu és trobar un equilibri adequat entre els dos extrems.</p>
+<p>També és important tenir en compte que les SVM poden ser lentes en conjunts de dades molt grans, ja que la complexitat computacional de manera exponencial augmenta amb la quantitat de mostres i atributs.</p>
+<p><strong>Exemple:</strong> classificar emails com a spam/no spam.</p>
+<blockquote>
+<p>Si les classes són linealment separables de manera senzilla, un algorisme més senzill com la regressió logística pot donar resultats similars amb menys complexitat computacional. SVM seria més adequat quan les classes no són linealment separables i es necessita un marge clar de separació o fins i tot aplicar el truc del nucli per transformar les dades.</p>
+</blockquote>
+<h3 id="naive-bayes">Naive Bayes</h3>
+<p><strong>Tipus</strong>: supervisat / classificació</p>
+<p><strong>Com funciona:</strong> aplica el teorema de Bayes amb la suposició d'independència entre atributs. Com eixa suposició moltes vegades és falsa (si hi ha certe correlació entre atributs, ja no són independents), per això s'anomena "naive" (ingenu). </p>
+<blockquote>
+<p>El teorema de Bayes permet calcular la probabilitat d'una classe donada una instància d'entrada, basant-se en les probabilitats prèvies i les evidències observades.</p>
+</blockquote>
+<p>Un avantatge de <strong>Naive Bayes</strong> és que és eficient tant si treballem amb atributs predictors continus com categòrics. Ara bé, si els atributs categòrics no són dicotòmics (més de dos valors possibles), caldrà transformar-los en variables fictícies numèriques (one-hot encoding) abans d'utilitzar l'algorisme.</p>
+<p>També té desavantatges: és sensible a atributs predictors irrelevants o redundants, i no gestiona bé atributs correlacionats. A més, si en les dades d'entrenament hi ha una combinació d'atributs que no apareix, la probabilitat serà zero i això pot afectar negativament les prediccions. Per evitar-ho, s'utilitza el <strong>Laplace smoothing</strong>, que afegeix una petita constant a les freqüències per evitar probabilitats zero.</p>
+<p><strong>Casos d'ús:</strong> situacions de classificació amb incertesa, variabilitat o falta de dades. També té aplicació en el camp del processament del llenguatge natural (NLP), en anàlisi de sentiments i en sistemes de recomanació. És més eficient que altres algorismes si tenim poques dades d'entrenament però sí que hi ha independència entre els atributs.</p>
+<p>De vegades també s'utilitza com un primer classificador, per després comparar els resultats amb altres algorismes més complexos. De fet, si funciona bé, com que és senzill i ràpid pot ser la primera i única opció.</p>
+<p><strong>Exemple:</strong> classificar dades en funció d'informació que arriba continuament des de sensors, classificar documents o correus electrònics, etc. </p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="../js/mathjax-config.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
