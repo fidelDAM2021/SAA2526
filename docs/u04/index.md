@@ -115,6 +115,8 @@ on n és el grau del polinomi i *$b_{n}, b_{n-1}, ..., b_{1}$* són els coeficie
 
 **Exemple:** predir l'evolució de la temperatura al llarg del dia.
 
+![Regressió polinòmica](imatges/u04RegresionPolinomica.png)
+
 ### Regressió logística binària
 
 **Tipus**: supervisat / classificació
@@ -156,11 +158,7 @@ $$f_\theta^{(i)}(x) = \frac{e^{-\theta^{(i)T}x}}{\sum_{j=1}^{|\Omega_C|} e^{-\th
 
 L'entrenament del model és obtenir els paràmetres *$\theta$* que maximitzen la probabilitat de les dades d'entrenament. És a dir, que el model estime una probabilitat alta per a la classe correcta de cada mostra d'entrenament, i una probabilitat baixa de la mateixa mostra per a les altres classes.
 
-Per minimitzar l'error s'utilitza una funció de cost denominada **cross entropy**. La fórmula es: 
-
-$$J(\Theta) = -\frac{1}{N} \sum_{j=1}^{N} \sum_{k=1}^{|\Omega_C|} c^{(j)}k \log(f\theta^{(k)}(x^{(j)}))$$ 
-
-On $c^{(j)}_k$ és 1 si la instància $j$ pertany a la classe $k$ i 0 en cas contrari. 
+Per minimitzar l'error s'utilitza una funció de cost denominada **cross entropy** que no anem a reproduir ací. 
 
 >Si la quantitat de classes és igual a 2, aquesta funció de cost és equivalent a la funció de cost utilitzada en la regressió logística binària
 
@@ -207,6 +205,7 @@ Hi ha dues tècniques principals que utilitzen els **Random Forest** per crear d
 La tècnica de **Subspace sampling** (mostreig de dades amb un subconjunt d'atributs diferents per cada arbre) també és utiltizada sovint per garantir que els diferents arbres siguen diferents i així evitar l'influència excesiva d'alguns atributs.
 
 A continuació es mostra una taula comparativa entre un **Random Forest** i un **Arbre de decisió individual**:
+
 | Aspecte | Random Forest | Arbre de Decisió Individual (DecisionTreeClassifier) |
 |---------|---------------|-------------------------------------------------------|
 | **Concepte** | Mètode de *Ensemble* (Bagging) | Model individual |
