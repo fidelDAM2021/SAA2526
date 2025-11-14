@@ -222,6 +222,7 @@ Una altra diferència entre el **boosting** i el **bagging** és que en el **boo
 **Exemple:** predir la probabilitat d'una malaltia a partir d'un historial mèdic. Un altre exemple: predir si un client renovarà la subscripció a un servei de streaming basant-se en el seu comportament d'ús.
 
 A continuació es mostra una taula comparativa entre les tècniques de **Bagging** i **Boosting**:
+
 | Aspecte | Bagging (p. ej., Random Forest) | Boosting (p. ej., AdaBoost) |
 |---------|----------------------------------|------------------------------|
 | **Flux d'Entrenament** | En paral·lel (independent). | En seqüència (incremental i dependent). |
