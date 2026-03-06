@@ -1,0 +1,873 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../u04/">
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>5. Aprenentatge no supervisat - Mòdul: Sistemes d'Aprenentatge Automàtic (CE IA i Big Data) Curs 25/26</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.618322db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../styles/taules.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#aprenentatge-no-supervisat" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Mòdul: Sistemes d&#39;Aprenentatge Automàtic (CE IA i Big Data) Curs 25/26" class="md-header__button md-logo" aria-label="Mòdul: Sistemes d'Aprenentatge Automàtic (CE IA i Big Data) Curs 25/26" data-md-component="logo">
+      
+  <img src="../img/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Mòdul: Sistemes d'Aprenentatge Automàtic (CE IA i Big Data) Curs 25/26
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              5. Aprenentatge no supervisat
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Mòdul: Sistemes d&#39;Aprenentatge Automàtic (CE IA i Big Data) Curs 25/26" class="md-nav__button md-logo" aria-label="Mòdul: Sistemes d'Aprenentatge Automàtic (CE IA i Big Data) Curs 25/26" data-md-component="logo">
+      
+  <img src="../img/logo.svg" alt="logo">
+
+    </a>
+    Mòdul: Sistemes d'Aprenentatge Automàtic (CE IA i Big Data) Curs 25/26
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inici
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../documents/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Presentació
+  
+
+    
+      <br>
+      <small>Mòdul Sistemes d'Aprenentatge Automàtic</small>
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../u01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Introducció a la Intel·ligència Artificial
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../u02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Introducció als Sistemes d'Aprenentatge Automàtic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../u03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Preprocessament i estadística
+  
+
+    
+      <br>
+      <small>Sistemes d'aprenentatge automàtic</small>
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../u04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Aprenentatge supervisat
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Aprenentatge no supervisat
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Aprenentatge no supervisat
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tecniques-principals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tècniques principals
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advantages-i-limitacions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Advantages i limitacions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aplicacions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicacions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#algorismes-principals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Algorismes principals
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Algorismes principals">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#k-means" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        K-Means
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="K-Means">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dbscan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DBSCAN
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clustering-jerarquic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Clustering jeràrquic
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gaussian-mixture-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gaussian Mixture Models
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tecniques-principals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tècniques principals
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advantages-i-limitacions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Advantages i limitacions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aplicacions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicacions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#algorismes-principals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Algorismes principals
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Algorismes principals">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#k-means" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        K-Means
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="K-Means">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dbscan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DBSCAN
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clustering-jerarquic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Clustering jeràrquic
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gaussian-mixture-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gaussian Mixture Models
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="aprenentatge-no-supervisat">Aprenentatge no supervisat</h1>
+<p>L'aprenentatge <strong>no supervisat</strong> és una part de l'aprenentatge automàtic que treballa amb dades sense etiquetar. És a dir, sabem les variables predictores però no hi ha variables objectius com a tal, ni etiquetes ni respostes predefinides. </p>
+<p>L'aprenentatge no supervisat <strong><em>no busca fer prediccions de valors</em></strong> sino descubrir estructures, patrons o representacions útils sense una eixida coneguda en principi. L'objectiu és comprendre l'organització intrínseca de les dades, realitzar classificacions, descobrir categories, anomalies o tendències i facilitar processos com visualització, reducció de dimensionalitat o segmentació.</p>
+<h2 id="tecniques-principals">Tècniques principals</h2>
+<ul>
+<li><strong>Agrupament (clustering)</strong></li>
+<li>Objectiu: agrupar objectes similars entre sí i diferents respecte a altres grups.</li>
+<li>Tècniques comunes: <strong>K-means</strong>, <strong>clustering jeràrquic</strong>, <strong>DBSCAN</strong>, <strong>Gaussian Mixture Models</strong>. Utilitzen distàncies o densitats per definir grups sense etiquetes prèvies.</li>
+<li>Aplicacions: segmentació de clients, detecció de comunitats en grafos, anàlisi de patrons en imatges sense etiquetes.</li>
+<li><strong>Reducció de dimensionalitat</strong></li>
+<li>Propòsit: reduir el nombre de trets mantenint la major informació possible.</li>
+<li>Tècniques comunes: Anàlisi de Components Principals (PCA), t-SNE, UMAP, autoencoders.</li>
+<li>Aplicacions: visualització 2D/3D de dades complexes, preprocesament per a mètodes supervisats quan hi ha poques etiquetes. Normalment complementa l'aprenentatge supervisat, on s'utilitza per reduir la grandària de les dades d'entrada abans d'aplicar un model.</li>
+</ul>
+<p>Hi ha altres tècniques, però generalment són tipus especials de les anteriors:</p>
+<ul>
+<li><strong>Aprenentatge de representació (feature learning)</strong></li>
+<li>Propòsit: descobrir representacions útils de les dades que capturen estructures subjacents. En general és una tècnica que va associada a la reducció de dimensionalitat.</li>
+<li>Tècniques: models autoencoder simples o profunds, mètodes de factoració de matrius (p. ex., SVD), aprenentatge de característiques sense supervisió per millorar classificació futura.</li>
+<li><strong>Models de densitat i modelatge probabilístic</strong></li>
+<li>Propòsit: estimar la distribució subjacent de les dades i descobrir estructures com agrupacions suaus. S'utilitza en tasques d'agrupament (clustering).</li>
+<li>Tècniques: Gaussian Mixture Models, Models de Mescla de Densitat, Representacions basades en probabilitats.</li>
+</ul>
+<p>De la reducció de dimensionalitat ja hem parlat al final de la unitat anterior, així que ens anem a centrar en tasques d'<strong>agrupament</strong> (clustering).</p>
+<h2 id="advantages-i-limitacions">Advantages i limitacions</h2>
+<ul>
+<li><strong>Advantages</strong></li>
+<li>No necessita etiquetes costoses; útil per a exploració inicial i generació d'hipòtesis.</li>
+<li>Pot descobrir estructures no previstes per etiquetes humanes.</li>
+<li>Competeix bé en escalabilitat quan s'implementen variants eficients (p. ex., mini-batch K-means).</li>
+<li><strong>Limitacions</strong></li>
+<li>Interpretabilitat: els resultats poden ser ambigus i requereixen validació externa.</li>
+<li>Selecció d'hiperparàmetres i mètriques d'avaluació no supervisades difícils de definir.</li>
+<li>Risc de biaixos presents en les dades: si les dades d'entrada ja contenen biaixos, l'aprenentatge no supervisat els amplifica o els revela de forma no obvia.</li>
+</ul>
+<h2 id="aplicacions">Aplicacions</h2>
+<p>Ja hem comentat més o menys quin tipus d'aplicació té l'aprenentatge no supervisat. Pel que fa a l'agrupament o clustering, les aplicacions més comunes inclouen:</p>
+<ul>
+<li><strong>Segmentació d'entitats</strong>: agrupar entitats (clients, productes, etc.) amb comportaments similars per a classificació o tractament personalitzat.</li>
+<li><strong>Detecció d'anomalies</strong>: identificar casos atípics en dades de transaccions financeres, sistemes de seguretat, fabricació de peces, etc.</li>
+<li><strong>Agrupament de documents</strong>: organitzar grans col·leccions de textos sense etiquetar en temes o categories.</li>
+<li><strong>Anàlisi de patrons en imatges</strong>: descobrir estructures o agrupacions en imatges sense etiquetes, com en la segmentació d'imatges o la detecció de característiques.</li>
+<li><strong>Reducció de dimensionalitat per a visualització</strong>: projectar dades d'alta dimensionalitat a espais de menor dimensió per facilitar la visualització i la comprensió de les dades.</li>
+</ul>
+<p>I moltes altres que es poden aplicar en àmbits com la biologia, la medicina, la ciència de materials, l'anàlisi de xarxes socials, etc.</p>
+<h2 id="algorismes-principals">Algorismes principals</h2>
+<p>Els principals algorismes d'agrupament (clustering) inclouen:</p>
+<ul>
+<li><strong>K-means</strong>: un algorisme de partició que divideix les dades en K grups basats en la distància als centròides.</li>
+<li><strong>Clustering jeràrquic</strong>: construeix una jerarquia de grups mitjançant un enfocament ascendent (agglomeratiu) o descendent (divisiu).</li>
+<li><strong>DBSCAN</strong>: un algorisme basat en densitat que identifica grups com a regions d'alta densitat separades per regions de baixa densitat.</li>
+<li><strong>Gaussian Mixture Models</strong>: modela les dades com una combinació de distribucions gaussiana, permetent agrupacions suaus i superposades.  </li>
+</ul>
+<h3 id="k-means">K-Means</h3>
+<p>L'algorisme K-Means és un dels mètodes més utilitzats per a realitzar clustering o agrupament de dades. La seua funció principal és dividir un conjunt de dades en K grups distints basats en la similitud de les seues característiques, sense necessitat de etiquetes prèvies. És com un model de classificació, però sense classes predefinides. Els grups es formen a partir de les dades mateixes.</p>
+<p><strong>Com funciona</strong></p>
+<p>El procés de K-Means és iteratiu i se basa en la distància entre els punts de dades i els <strong>centròides</strong> dels grups. Un <strong>centròide</strong> és el punt que representa el centre d'un grup i es calcula com la mitjana de les coordenades dels punts que pertanyen a eixe grup. </p>
+<p><img alt="Centròides en K-Means" src="imatges/u05-01-centroides.png" /></p>
+<p>L'algorisme segueix els següents passos:</p>
+<ul>
+<li><strong>Inicialització</strong>: Es seleccionen K punts de dades com a centròides inicials. Esta selecció pot ser aleatòria o mitjançant mètodes de millora de la convergència.</li>
+<li><strong>Assignació</strong>: Cada punt de dades es assigna al grup més proper basat en la distància al centròide (en general s'utilitza la distància euclidiana). Això crea K grups de dades.</li>
+<li><strong>Actualització</strong>: Es recalculen els centròides de cada grup com la mitjana de les coordenades dels punts assignats a eixe grup.</li>
+<li><strong>Repetició</strong>: Els passos d'assignació i actualització es repeteixen fins que els centròides no canvien significativament o s'arriba a una quantitat màxima d'iteracions.</li>
+</ul>
+<p><strong>Objectiu</strong></p>
+<p>L'objectiu de <strong>K-Means</strong> és minimitzar la variança dins de cada grup. Recordeu que la variança és la mitjana de la suma de les distàncies al quadrat de cada punt respecte a la mitjana. Eixa suma també és coneguda com a <strong>inèrcia</strong> o <strong>suma de quadrats intra-grup (SEE)</strong>. i s'utilitza com a mesura de la qualitat de l'agrupament. </p>
+<p>Això significa que el model busca formar grups on els punts estiguen el més a prop possible al seu centròide, creant agrupacions compactes i ben definides.</p>
+<p><strong>Com triar la quantitat de grups (K)</strong></p>
+<p>Hi ha diverses tècniques per determinar la quantitat òptima de grups en K-Means, i per tant el valor de K. Algunes de les més comunes són:</p>
+<ul>
+<li><strong>Mètode del colze (Elbow method)</strong>: Es calcula la inèrcia (SSE) per a diferents valors de K i es busca el punt on la disminució de la inèrcia comença a ser menys pronunciada, formant un "colze" en la gràfica.</li>
+</ul>
+<p><img alt="Elbow method" src="imatges/u05-02-colze-see.png" /></p>
+<ul>
+<li><strong>Mètode de la silueta (Silhouette method)</strong>: Es calcula el coeficient de silueta per a diferents valors de K. El coeficient de silueta se calcula a partir de la distància mitjana d'un punt respecte a la resta de punts del mateix grup, i respecte als punts del grup més proper. Està entre -1 (mal assignat) i 1(ben assignat). Finalment se selecciona el valor de K que maximitza eixe valor (quan més prop a 1, millor), indicant una millor separació entre grups. S'utilitza si no hi ha un colze clar en la gràfica de l'Elbow method.</li>
+</ul>
+<p><img alt="Silhouette method" src="imatges/u05-03-silueta.png" /></p>
+<ul>
+<li><strong>Mètode de la mitjana de distàncies (Gap statistic)</strong>: Compara la inèrcia del model amb la inèrcia esperada amb una distribució aleatòria de les dades, seleccionant el valor de K que maximitza la diferència.</li>
+</ul>
+<p><strong>Limitacions de K-Means</strong></p>
+<p>K-Means, com tots els algorismes, té les seues limitacions.</p>
+<ul>
+<li><strong>Sensibilitat a la inicialització</strong>: La selecció dels centròides inicials pot afectar significativament els resultats. Si els centròides es seleccionen de manera inadequada, el model pot convergir a un mínim local en lloc del mínim global, produint agrupaments subòptims. Per això, és comú executar K-Means diverses vegades amb diferents inicialitzacions i seleccionar el millor resultat.</li>
+<li><strong>Forma i mida dels grups</strong>: K-Means assumeix que els grups són esfericos i de mida similar, ja que utilitza la distància euclidiana per a l'assignació. Si els grups tenen formes irregulars o diferents mides, K-Means pot no ser capaç de capturar adequadament l'estructura de les dades.</li>
+<li><strong>Sensibilitat a les dades atípiques (outliers)</strong>: K-Means és sensible a les dades atípiques (outliers). Com que tot funciona basant-se en valors mitjans, els punts que estan molt lluny de la mitjana afecten al bon funcionament dels custers. Això pot distorsionar els grups i produir resultats no representatius.</li>
+<li><strong>Requereix especificar K</strong>: K-Means necessita que l'usuari especifique la quantitat de grups (K) abans de l'execució, el que pot ser difícil si no es té una idea clara de l'estructura de les dades. Tot i que hi ha tècniques per ajudar a determinar K, no sempre és fàcil trobar un valor òptim.</li>
+</ul>
+<p><strong>Implementació en Python</strong></p>
+<p>Normalment s'utilitza la mateixa llibreria que ja coneguem, <code>scikit-learn</code>, que té una implementació molt eficient de K-Means. Permet ajustar el paràmetre <code>n_init</code> per a realitzar múltiples inicialitzacions i seleccionar la millor solució, i també el paràmetre <code>init</code> per a triar el mètode d'inicialització (com <code>k-means++</code> que millora la convergència).</p>
+<blockquote>
+<p>En quaderns annexos veurem com implementar K-Means en Python</p>
+</blockquote>
+<h4 id="dbscan">DBSCAN</h4>
+<p><strong>DBSCAN</strong> (Density-Based Spatial Clustering of Applications with Noise) és un algorisme de clustering basat en densitat que identifica grups com a regions d'alta densitat separades per regions de baixa densitat. És especialment útil per a dades amb formes arbitràries i per a la detecció d'anomalies, ja que no se basa en un punt central sino en la forma en què les dades es distribueixen en l'espai.</p>
+<p><strong>Com funciona</strong></p>
+<p>DBSCAN utilitza dos paràmetres principals: <code>eps</code> (la distància màxima entre punts per considerar-los veïns) i <code>min_samples</code> (la quantitat mínima de punts necessaris per formar un cluster).  </p>
+<p>L'algorisme analitza cada punt i el classifica com a:</p>
+<ul>
+<li><strong>Punt central (core point)</strong>: Si té almenys <code>min_samples</code> punts dins de la distància <code>eps</code>, és un punt central i forma part d'un cluster.</li>
+<li><strong>Punt de vora (border point)</strong>: Si té menys de <code>min_samples</code> punts dins de <code>eps</code> però està dins de la distància <code>eps</code> d'un punt central, és un punt de vora i també forma part del cluster.</li>
+<li><strong>Punt de soroll (noise point)</strong>: Si no és un punt central ni un punt de vora, es considera soroll (outlier) i no pertany a cap cluster.</li>
+</ul>
+<p><img alt="DBSCAN" src="imatges/u05-04-dbscan.png" /></p>
+<p><strong>Avantatges de DBSCAN</strong></p>
+<ul>
+<li>No cal especificar la quantitat de clusters (K) prèviament, ja que els clusters es formen basant-se en la densitat de les dades.</li>
+<li>Pot identificar clusters de formes arbitràries, a diferència de K-Means que assumeix clusters esfèrics.</li>
+<li>Detecta automàticament els punts de soroll (outliers), cosa que el fa útil per a dades amb anomalies.</li>
+</ul>
+<p><strong>Limitacions de DBSCAN</strong></p>
+<ul>
+<li><strong>Densitats variables</strong>: DBSCAN pot tindre dificultats per a identificar clusters si les densitats varien significativament, ja que utilitza un paràmetre <code>eps</code> fix per a tots els clusters.</li>
+<li><strong>Sensibilitat als paràmetres</strong>: La selecció dels paràmetres <code>eps</code> i <code>min_samples</code> pot ser complicada i pot afectar significativament els resultats. No hi ha una regla clara per a triar aquests paràmetres, i moltes vegades cal fer diferents proves.</li>
+<li><strong>No funciona bé amb dades d'alta dimensionalitat</strong>: La distància entre punts es torna menys significativa en espais de moltes dimensions (mal de la dimensionalitat).</li>
+</ul>
+<p><strong>Triar els paràmetres</strong></p>
+<p>No hi ha una regla clara, com hem comentat, però podem seguir certes pautes:</p>
+<ul>
+<li>Per a <code>eps</code>, es pot utilitzar un gràfic de distàncies k-ésimes (<strong><em>k-distance graph</em></strong>) per a identificar un punt d'inflexió que sugerisca un valor adequat.</li>
+<li>Per a <code>min_samples</code>, una regla general és utilitzar un valor major o igual a la dimensió de les dades + 1. Si hi ha molts outliers, duplicar el seu valor.</li>
+</ul>
+<p><strong>Implementació en Python</strong></p>
+<p>També s'utilitza <code>scikit-learn</code> per a implementar DBSCAN, que permet ajustar els paràmetres <code>eps</code> i <code>min_samples</code> de manera senzilla. A més, proporciona una etiqueta de -1 per als punts de soroll, facilitant la identificació d'anomalies en les dades.</p>
+<blockquote>
+<p>En quaderns annexos veurem com implementar també DBSCAN en Python</p>
+</blockquote>
+<h4 id="clustering-jerarquic">Clustering jeràrquic</h4>
+<p>L'algorisme de <strong>clustering jeràrquic</strong> construeix una jerarquia de grups mitjançant un enfocament ascendent (aglomeratiu o <strong><em>bottom-up</em></strong>) o descendent (divisiu o <strong><em>top-down</em></strong>). En el clustering jeràrquic agglomeratiu, cada punt comença com un cluster individual i es van fusionant els clusters més propers fins a formar un únic cluster que conté totes les dades. En el clustering jeràrquic divisiu, es comença amb un únic cluster que conté totes les dades i es va dividint en subclusters fins a obtenir clusters individuals.</p>
+<p>No necessita establir la quantitat de clusters prèviament, ja que es pot tallar la jerarquia en qualsevol nivell per obtenir el nombre desitjat de clusters. La distància entre els clusters es pot calcular de diverses maneres, com la distància mínima (single linkage), la distància màxima (complete linkage) o la distància mitjana (average linkage).</p>
+<p>Com que té forma d'arbre, es pot visualitzar mitjançant un diagrama de dendrograma, que mostra com es fusionen o divideixen els clusters a mesura que es recorre la jerarquia. Per això, és fàcilment interpretable.</p>
+<p>El <strong>clustering jeràrquic</strong> és més costós computacionalment que K-Means, especialment per a grans conjunts de dades.</p>
+<h4 id="gaussian-mixture-models">Gaussian Mixture Models</h4>
+<p>La principal diferència dels GMM respecte a altres mètodes és que un punt té una probabilitat de pertànyer a cada cluster, en lloc de ser assignat a un únic cluster. Això permet que els clusters es superposen i que els punts puguen pertànyer a múltiples clusters amb diferents graus de pertinença. Per això se considera un model de clustering suau (<strong><em>soft clustering</em></strong>), a diferència de K-Means que és un model de clustering dur (<strong><em>hard clustering</em></strong>).</p>
+<p>GMM és més flexible que K-Means, ja que pot modelar clusters de formes arbitràries. És per tant útil quan les fronteres entre clusters no estan clarament definides. D'altra banda, com que és un model probabilístic, pot ser més sensible a la inicialització i pot requerir més iteracions per a convergir.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="../js/mathjax-config.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
