@@ -110,7 +110,7 @@ Normalment s'utilitza la mateixa llibreria que ja coneguem, `scikit-learn`, que 
 
 > En quaderns annexos veurem com implementar K-Means en Python
 
-#### DBSCAN
+### DBSCAN
 
 **DBSCAN** (Density-Based Spatial Clustering of Applications with Noise) és un algorisme de clustering basat en densitat que identifica grups com a regions d'alta densitat separades per regions de baixa densitat. És especialment útil per a dades amb formes arbitràries i per a la detecció d'anomalies, ja que no se basa en un punt central sino en la forma en què les dades es distribueixen en l'espai.
 
@@ -151,7 +151,7 @@ També s'utilitza `scikit-learn` per a implementar DBSCAN, que permet ajustar el
 
 > En quaderns annexos veurem com implementar també DBSCAN en Python
 
-#### Clustering jeràrquic
+### Clustering jeràrquic
 
 L'algorisme de **clustering jeràrquic** construeix una jerarquia de grups mitjançant un enfocament ascendent (aglomeratiu o ***bottom-up***) o descendent (divisiu o ***top-down***). En el clustering jeràrquic agglomeratiu, cada punt comença com un cluster individual i es van fusionant els clusters més propers fins a formar un únic cluster que conté totes les dades. En el clustering jeràrquic divisiu, es comença amb un únic cluster que conté totes les dades i es va dividint en subclusters fins a obtenir clusters individuals.
 
@@ -161,7 +161,7 @@ Com que té forma d'arbre, es pot visualitzar mitjançant un diagrama de dendrog
 
 El **clustering jeràrquic** és més costós computacionalment que K-Means, especialment per a grans conjunts de dades.
 
-#### Gaussian Mixture Models
+### Gaussian Mixture Models
 
 La principal diferència dels GMM respecte a altres mètodes és que un punt té una probabilitat de pertànyer a cada cluster, en lloc de ser assignat a un únic cluster. Això permet que els clusters es superposen i que els punts puguen pertànyer a múltiples clusters amb diferents graus de pertinença. Per això se considera un model de clustering suau (***soft clustering***), a diferència de K-Means que és un model de clustering dur (***hard clustering***).
 
