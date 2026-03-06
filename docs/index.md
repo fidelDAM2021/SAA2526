@@ -7,4 +7,5 @@
 * [2. Introducció als Sistemes d'Aprenentatge Automàtic](u02/index.md)
 * [3. Preprocessament i estadística](u03/index.md)
 * [4. Aprenentatge supervisat](u04/index.md)
+* [5. Aprenentatge no supervisat](u05/index.md)
 
