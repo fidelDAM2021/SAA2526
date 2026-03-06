@@ -475,8 +475,7 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="K-Means">
-      <ul class="md-nav__list">
+</li>
         
           <li class="md-nav__item">
   <a href="#dbscan" class="md-nav__link">
@@ -508,11 +507,6 @@
       
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -609,8 +603,7 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="K-Means">
-      <ul class="md-nav__list">
+</li>
         
           <li class="md-nav__item">
   <a href="#dbscan" class="md-nav__link">
@@ -642,11 +635,6 @@
       
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -766,7 +754,7 @@
 <blockquote>
 <p>En quaderns annexos veurem com implementar K-Means en Python</p>
 </blockquote>
-<h4 id="dbscan">DBSCAN</h4>
+<h3 id="dbscan">DBSCAN</h3>
 <p><strong>DBSCAN</strong> (Density-Based Spatial Clustering of Applications with Noise) és un algorisme de clustering basat en densitat que identifica grups com a regions d'alta densitat separades per regions de baixa densitat. És especialment útil per a dades amb formes arbitràries i per a la detecció d'anomalies, ja que no se basa en un punt central sino en la forma en què les dades es distribueixen en l'espai.</p>
 <p><strong>Com funciona</strong></p>
 <p>DBSCAN utilitza dos paràmetres principals: <code>eps</code> (la distància màxima entre punts per considerar-los veïns) i <code>min_samples</code> (la quantitat mínima de punts necessaris per formar un cluster).  </p>
@@ -800,12 +788,12 @@
 <blockquote>
 <p>En quaderns annexos veurem com implementar també DBSCAN en Python</p>
 </blockquote>
-<h4 id="clustering-jerarquic">Clustering jeràrquic</h4>
+<h3 id="clustering-jerarquic">Clustering jeràrquic</h3>
 <p>L'algorisme de <strong>clustering jeràrquic</strong> construeix una jerarquia de grups mitjançant un enfocament ascendent (aglomeratiu o <strong><em>bottom-up</em></strong>) o descendent (divisiu o <strong><em>top-down</em></strong>). En el clustering jeràrquic agglomeratiu, cada punt comença com un cluster individual i es van fusionant els clusters més propers fins a formar un únic cluster que conté totes les dades. En el clustering jeràrquic divisiu, es comença amb un únic cluster que conté totes les dades i es va dividint en subclusters fins a obtenir clusters individuals.</p>
 <p>No necessita establir la quantitat de clusters prèviament, ja que es pot tallar la jerarquia en qualsevol nivell per obtenir el nombre desitjat de clusters. La distància entre els clusters es pot calcular de diverses maneres, com la distància mínima (single linkage), la distància màxima (complete linkage) o la distància mitjana (average linkage).</p>
 <p>Com que té forma d'arbre, es pot visualitzar mitjançant un diagrama de dendrograma, que mostra com es fusionen o divideixen els clusters a mesura que es recorre la jerarquia. Per això, és fàcilment interpretable.</p>
 <p>El <strong>clustering jeràrquic</strong> és més costós computacionalment que K-Means, especialment per a grans conjunts de dades.</p>
-<h4 id="gaussian-mixture-models">Gaussian Mixture Models</h4>
+<h3 id="gaussian-mixture-models">Gaussian Mixture Models</h3>
 <p>La principal diferència dels GMM respecte a altres mètodes és que un punt té una probabilitat de pertànyer a cada cluster, en lloc de ser assignat a un únic cluster. Això permet que els clusters es superposen i que els punts puguen pertànyer a múltiples clusters amb diferents graus de pertinença. Per això se considera un model de clustering suau (<strong><em>soft clustering</em></strong>), a diferència de K-Means que és un model de clustering dur (<strong><em>hard clustering</em></strong>).</p>
 <p>GMM és més flexible que K-Means, ja que pot modelar clusters de formes arbitràries. És per tant útil quan les fronteres entre clusters no estan clarament definides. D'altra banda, com que és un model probabilístic, pot ser més sensible a la inicialització i pot requerir més iteracions per a convergir.</p>
 
